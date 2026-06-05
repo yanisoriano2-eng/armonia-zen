@@ -541,7 +541,9 @@
                     return '<tr><td>' + esc(u.name) + '</td><td>' + esc(u.email) + '</td><td><span class="badge gold">' + esc(roleLabel(u.role)) + '</span></td>' +
                         '<td><div class="row-actions"><button class="btn btn--sm" data-uedit="' + u.id + '">Editar</button>' + (list.length > 1 ? '<button class="btn btn--sm btn--danger" data-udel="' + u.id + '">✕</button>' : '') + '</div></td></tr>';
                 }).join('') + '</tbody></table>' +
-                '<div class="panel" style="margin-top:22px;"><h3>Roles</h3><p style="color:var(--ivory-soft);font-size:.88rem;line-height:1.8;"><b>Super admin:</b> acceso total.<br><b>Editor:</b> productos, blog, categorías y medios.<br><b>Soporte:</b> consultas y datos de contacto.</p></div>';
+                (AZ._isSupabase
+                    ? '<div class="panel" style="margin-top:22px;"><h3>Gestión de usuarios</h3><p style="color:var(--ivory-soft);font-size:.88rem;line-height:1.8;">Con Supabase activo, los usuarios se gestionan desde el dashboard.<br><b>Supabase Dashboard → Authentication → Users → Add user</b><br><br>Luego ejecutá en SQL Editor:<br><code style="color:var(--gold);font-size:.8rem">insert into admin_profiles(id,name,role) select id,\'Nombre\',\'super\' from auth.users where email=\'tu@email.com\'</code></p><a class="btn btn--sm" href="https://supabase.com/dashboard" target="_blank" style="margin-top:14px;display:inline-flex;">Abrir Supabase Dashboard ↗</a></div>'
+                    : '<div class="panel" style="margin-top:22px;"><h3>Roles</h3><p style="color:var(--ivory-soft);font-size:.88rem;line-height:1.8;"><b>Super admin:</b> acceso total.<br><b>Editor:</b> productos, blog, categorías y medios.<br><b>Soporte:</b> consultas y datos de contacto.</p></div>');
             $('#u-new').onclick = function () { edit(null); };
             $$('[data-uedit]', c).forEach(function (b) { b.onclick = function () { edit(b.getAttribute('data-uedit')); }; });
             $$('[data-udel]', c).forEach(function (b) { b.onclick = function () {
@@ -707,27 +709,47 @@
     /* ====================================================================
        TOP-LEVEL WIRING
        ==================================================================== */
-    // Login
+    // Login (async — compatible con Supabase Auth y fallback localStorage)
     $('#login-form').onsubmit = function (e) {
         e.preventDefault();
-        var s = AZ.login($('#li-email').value.trim(), $('#li-pass').value);
+        var btn = this.querySelector('[type=submit]');
         var err = $('#login-error');
-        if (!s) { err.textContent = 'Email o contraseña incorrectos.'; err.classList.add('show'); return; }
-        if (!$('#li-remember').checked) { /* sesión simple igual persiste; nota informativa */ }
-        err.classList.remove('show'); user = s; showApp();
+        btn.disabled = true; btn.textContent = 'Ingresando…';
+        err.classList.remove('show');
+        Promise.resolve(AZ.login($('#li-email').value.trim(), $('#li-pass').value))
+            .then(function (s) {
+                btn.disabled = false; btn.textContent = 'Ingresar';
+                if (!s) { err.textContent = 'Email o contraseña incorrectos.'; err.classList.add('show'); return; }
+                user = s; showApp();
+            })
+            .catch(function (ex) {
+                btn.disabled = false; btn.textContent = 'Ingresar';
+                err.textContent = 'Error de conexión: ' + (ex.message || ex); err.classList.add('show');
+            });
     };
     $('#to-recover').onclick = function () { $('#login-view').style.display = 'none'; $('#recover-view').style.display = 'block'; };
     $('#to-login').onclick = function () { $('#recover-view').style.display = 'none'; $('#login-view').style.display = 'block'; };
     $('#recover-form').onsubmit = function (e) {
         e.preventDefault();
-        var ok = AZ.resetPassword($('#rec-email').value.trim(), $('#rec-pass').value);
+        var btn = this.querySelector('[type=submit]');
         var err = $('#recover-error');
-        if (!ok) { err.textContent = 'No existe una cuenta con ese email.'; err.classList.add('show'); return; }
-        err.classList.remove('show'); toast('Contraseña actualizada, ya podés ingresar.');
-        $('#to-login').click(); $('#li-email').value = $('#rec-email').value;
+        btn.disabled = true; btn.textContent = 'Enviando…';
+        Promise.resolve(AZ.resetPassword($('#rec-email').value.trim()))
+            .then(function (ok) {
+                btn.disabled = false; btn.textContent = 'Restablecer contraseña';
+                if (!ok) { err.textContent = 'No encontramos una cuenta con ese email.'; err.classList.add('show'); return; }
+                err.classList.remove('show');
+                toast(AZ._isSupabase
+                    ? 'Revisá tu email para restablecer la contraseña.'
+                    : 'Contraseña actualizada, ya podés ingresar.');
+                $('#to-login').click();
+                if (!AZ._isSupabase) $('#li-email').value = $('#rec-email').value;
+            });
     };
 
-    $('#logout').onclick = function () { AZ.logout(); location.reload(); };
+    $('#logout').onclick = function () {
+        Promise.resolve(AZ.logout()).then(function () { location.reload(); });
+    };
     $('#view-site').onclick = function () { window.open('../index.html', '_blank'); };
     $('#menu-btn').onclick = function () { $('#sidebar').classList.toggle('open'); };
 
@@ -741,8 +763,11 @@
         });
     };
 
-    // Sesión activa
-    var existing = AZ.session();
-    if (existing) { user = existing; showApp(); }
+    // Sesión activa (async — espera a que AZ esté listo y la sesión resuelta)
     window.addEventListener('hashchange', function () { if (user) { var s = location.hash.replace('#', ''); if (s && s !== current) route(s); } });
+    AZ.onReady(function () {
+        Promise.resolve(AZ.session()).then(function (existing) {
+            if (existing) { user = existing; showApp(); }
+        });
+    });
 })();
