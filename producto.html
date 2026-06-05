@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda — Armonía Zen · Decoración consciente</title>
-    <meta name="description" content="Joyería energética, plantas, fuentes de agua, lámparas de sal, aromaterapia y decoración espiritual. Boutique premium de bienestar en Buenos Aires.">
-    <meta property="og:title" content="Tienda — Armonía Zen">
-    <meta property="og:description" content="Piezas seleccionadas para armonizar tu hogar y elevar tu bienestar.">
+    <title id="doc-title">Producto — Armonía Zen</title>
+    <meta name="description" id="doc-desc" content="Decoración consciente para espacios que transmiten calma.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/armonia.css">
 </head>
-<body>
+<body class="prod-body">
 
     <header class="site-header scrolled" id="header">
         <a href="index.html" class="brand">ARMONÍA ZEN</a>
@@ -39,71 +37,75 @@
         <a href="contacto.html">Contacto</a>
     </nav>
 
-    <!-- HERO -->
-    <section class="page-hero">
-        <div class="page-hero__media" data-parallax="0.25" style="background-image:url('https://images.unsplash.com/photo-1619166855707-bba87a7772a2?w=2000&q=80&auto=format&fit=crop');"></div>
-        <div class="page-hero__inner">
-            <span class="eyebrow">La Colección</span>
-            <h1 class="page-hero__title">Tienda</h1>
-            <p class="page-hero__text">Joyería energética, plantas vivas, fuentes de agua y piezas espirituales. Cada objeto, elegido por cómo transforma un espacio.</p>
+    <!-- BREADCRUMB -->
+    <div class="prod-breadcrumb" id="breadcrumb">
+        <a href="index.html">Inicio</a><span>·</span>
+        <a href="catalogo.html">Tienda</a><span>·</span>
+        <span id="bc-name">Producto</span>
+    </div>
+
+    <!-- DETALLE -->
+    <div class="prod-detail" id="prod-detail">
+
+        <!-- GALERÍA -->
+        <div class="prod-gallery" id="prod-gallery">
+            <div class="prod-gallery__main" id="gallery-main">
+                <img id="gallery-img" src="" alt="">
+            </div>
+            <div class="prod-gallery__thumbs" id="gallery-thumbs"></div>
         </div>
+
+        <!-- INFO -->
+        <div class="prod-info" id="prod-info">
+
+            <div class="prod-info__badges" id="info-badges"></div>
+
+            <h1 class="prod-info__name" id="info-name"></h1>
+
+            <div class="prod-info__price" id="info-price"></div>
+
+            <p class="prod-info__desc" id="info-desc"></p>
+
+            <div class="prod-actions">
+                <button class="prod-btn prod-btn--cart" id="btn-cart">Agregar al carrito</button>
+                <a class="prod-btn prod-btn--wa" id="btn-wa" href="#" target="_blank">Consultar por WhatsApp</a>
+                <button class="prod-btn prod-btn--wish" id="btn-wish" aria-label="Guardar">♡</button>
+            </div>
+
+            <!-- CARACTERÍSTICAS -->
+            <div class="prod-block" id="block-features" style="display:none;">
+                <h4>Características</h4>
+                <ul class="prod-features__list" id="features-list"></ul>
+            </div>
+
+            <!-- BENEFICIOS -->
+            <div class="prod-block" id="block-benefits" style="display:none;">
+                <h4>Beneficios</h4>
+                <div class="prod-benefits__grid" id="benefits-grid"></div>
+            </div>
+
+            <!-- INFORMACIÓN ENERGÉTICA -->
+            <div class="prod-energy" id="block-energy" style="display:none;">
+                <div class="prod-energy__name" id="energy-name"></div>
+                <div class="prod-energy__grid" id="energy-grid"></div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="prod-block" id="block-faq" style="display:none;">
+                <h4>Preguntas frecuentes</h4>
+                <div id="faq-list"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RELACIONADOS -->
+    <section class="related-section" id="related-section" style="display:none;">
+        <p class="related-section__title">También te puede interesar</p>
+        <div class="related-grid" id="related-grid"></div>
     </section>
 
-    <!-- CATÁLOGO (fondo claro) -->
-    <div class="catalog-body">
-
-        <!-- BARRA DE FILTROS -->
-        <div class="cat-bar" id="cat-bar">
-            <!-- Categorías principales -->
-            <div class="cat-bar__row" id="cat-main">
-                <button class="cat-tab active" data-cat="all">Todo</button>
-                <button class="cat-tab" data-cat="joyeria">Joyería</button>
-                <button class="cat-tab" data-cat="plantas">Plantas</button>
-                <button class="cat-tab" data-cat="fuentes">Fuentes</button>
-                <button class="cat-tab" data-cat="cascadas">Cascadas de Humo</button>
-                <button class="cat-tab" data-cat="decoracion">Decoración</button>
-                <button class="cat-tab" data-cat="lamparas">Lámparas de Sal</button>
-                <button class="cat-tab" data-cat="aromaterapia">Aromaterapia</button>
-                <button class="cat-tab" data-cat="terrarios">Terrarios</button>
-            </div>
-            <!-- Subcategorías dinámicas -->
-            <div class="cat-bar__sub" id="cat-sub"></div>
-            <!-- Búsqueda y orden -->
-            <div class="cat-bar__tools">
-                <input type="text" class="cat-search" id="cat-search" placeholder="Buscar…" autocomplete="off">
-                <select class="cat-sort" id="cat-sort">
-                    <option value="default">Orden sugerido</option>
-                    <option value="price-asc">Precio: menor a mayor</option>
-                    <option value="price-desc">Precio: mayor a menor</option>
-                    <option value="name">Nombre A–Z</option>
-                </select>
-                <span class="cat-count" id="cat-count"></span>
-            </div>
-        </div>
-
-        <!-- GRID -->
-        <div class="catalog-section">
-            <div class="catalog-grid" id="catalog-grid"></div>
-        </div>
-
-        <!-- VISTOS RECIENTEMENTE -->
-        <section class="recently-section" id="recently-section" style="display:none;">
-            <h2>Visto recientemente</h2>
-            <div class="recently-grid" id="recently-grid"></div>
-        </section>
-
-    </div><!-- /catalog-body -->
-
-    <!-- CTA -->
-    <section class="section section--moss">
-        <div class="invite reveal">
-            <span class="eyebrow">¿Necesitás una guía?</span>
-            <h2 class="display">Te ayudamos a elegir.</h2>
-            <p class="lead">Contanos cómo es tu espacio y qué buscás sentir. Armamos una selección a tu medida sin costo.</p>
-            <div style="margin-top:34px;"><a href="contacto.html" class="btn btn--solid">Escribinos</a></div>
-        </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer class="site-footer">
         <p class="footer-quote">«La armonía comienza en los espacios que habitamos.»</p>
         <div class="footer-grid">
@@ -133,5 +135,6 @@
     <script src="js/armonia.js"></script>
     <script src="js/catalogo-armonia.js"></script>
     <script src="js/site-content.js"></script>
+    <script src="js/producto-armonia.js"></script>
 </body>
 </html>
