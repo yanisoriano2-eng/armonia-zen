@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal — Armonía Zen</title>
+    <meta name="description" content="Guías, rituales y bienestar. Lecturas para una vida más consciente y un hogar en armonía.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/armonia.css">
+</head>
+<body>
+
+    <header class="site-header scrolled" id="header">
+        <a href="index.html" class="brand">ARMONÍA ZEN</a>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Tienda</a>
+            <a href="piedras.html">Piedras</a>
+            <a href="plantas.html">Plantas</a>
+            <a href="blog.html">Journal</a>
+            <a href="nosotros.html">Filosofía</a>
+            <button class="cart-trigger" id="cart-trigger">Carrito<sup id="cart-count">0</sup></button>
+            <a href="contacto.html" class="nav__cta">Contacto</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Tienda</a>
+        <a href="piedras.html">Piedras</a>
+        <a href="plantas.html">Plantas</a>
+        <a href="blog.html">Journal</a>
+        <a href="nosotros.html">Filosofía</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero__media" data-parallax="0.25" style="background-image: url('https://images.unsplash.com/photo-1568990416308-c998af4cf9ee?w=2000&q=80&auto=format&fit=crop');"></div>
+        <div class="page-hero__inner">
+            <span class="eyebrow">Guías · Rituales · Bienestar</span>
+            <h1 class="page-hero__title">Journal</h1>
+            <p class="page-hero__text">Lecturas para una vida más consciente. El significado de cada elemento y cómo darle un lugar en tu hogar.</p>
+        </div>
+    </section>
+
+    <!-- ARTÍCULO DESTACADO -->
+    <section class="section">
+        <a href="#" class="entry reveal" style="display:grid; grid-template-columns:1.2fr 1fr; gap:clamp(30px,5vw,80px); align-items:center; max-width:1480px; margin:0 auto;">
+            <div class="entry__media" style="aspect-ratio:16/11; margin-bottom:0;">
+                <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?w=1300&q=80&auto=format&fit=crop" alt="Feng Shui">
+            </div>
+            <div>
+                <div class="entry__meta"><span>Destacado</span><span>Decoración</span><span>10 min</span></div>
+                <h2 class="display" style="font-size:clamp(2rem,3.6vw,3.2rem); margin-bottom:18px;">Feng Shui: el arte de dejar fluir la energía del hogar</h2>
+                <p class="lead">Los principios milenarios para organizar el espacio de modo que la energía circule libre — y cómo aplicarlos hoy, sin transformar tu casa por completo. Una guía para empezar por lo esencial.</p>
+                <div style="margin-top:28px;"><span class="link-underline">Leer artículo</span></div>
+            </div>
+        </a>
+    </section>
+
+    <!-- GRID DE ARTÍCULOS -->
+    <section class="section section--moss" style="padding-top:clamp(40px,5vw,70px);">
+        <div class="journal">
+            <a href="#" class="entry reveal">
+                <div class="entry__media"><img src="https://images.unsplash.com/photo-1623241923490-5b2fd532828f?w=900&q=80&auto=format&fit=crop" alt="Lámpara de sal"></div>
+                <div class="entry__meta"><span>Productos</span><span>5 min</span></div>
+                <h3 class="entry__title">¿Para qué sirve una lámpara de sal?</h3>
+                <p class="entry__excerpt">Cómo las lámparas de sal del Himalaya entibian el aire, crean atmósferas cálidas y preparan el cuerpo para el descanso.</p>
+            </a>
+            <a href="#" class="entry reveal" data-delay="1">
+                <div class="entry__media"><img src="https://images.unsplash.com/photo-1609216970378-ce61cd74a187?w=900&q=80&auto=format&fit=crop" alt="Piedras energéticas"></div>
+                <div class="entry__meta"><span>Guía</span><span>8 min</span></div>
+                <h3 class="entry__title">El significado de las piedras energéticas</h3>
+                <p class="entry__excerpt">Amatista, cuarzo rosa, citrino y más. El poder de cada cristal y cómo elevar la energía de tus espacios.</p>
+            </a>
+            <a href="#" class="entry reveal">
+                <div class="entry__media"><img src="https://images.unsplash.com/photo-1596045571419-664297d8f502?w=900&q=80&auto=format&fit=crop" alt="Buda en el hogar"></div>
+                <div class="entry__meta"><span>Espiritualidad</span><span>6 min</span></div>
+                <h3 class="entry__title">Qué representa tener un Buda en el hogar</h3>
+                <p class="entry__excerpt">Símbolo de paz y sabiduría: el verdadero significado de un Buda y cómo integrar su energía en tu espacio.</p>
+            </a>
+            <a href="#" class="entry reveal" data-delay="1">
+                <div class="entry__media"><img src="https://images.unsplash.com/photo-1764422097784-0eaa2340d0e1?w=900&q=80&auto=format&fit=crop" alt="Plantas armónicas"></div>
+                <div class="entry__meta"><span>Naturaleza</span><span>7 min</span></div>
+                <h3 class="entry__title">Plantas que crean espacios armónicos</h3>
+                <p class="entry__excerpt">Las mejores plantas para purificar, energizar y decorar tus ambientes con vida consciente.</p>
+            </a>
+            <a href="#" class="entry reveal">
+                <div class="entry__media"><img src="https://images.unsplash.com/photo-1597336465111-a392afd218bc?w=900&q=80&auto=format&fit=crop" alt="Limpiar cristales"></div>
+                <div class="entry__meta"><span>Ritual</span><span>5 min</span></div>
+                <h3 class="entry__title">Cómo limpiar energéticamente tus cristales</h3>
+                <p class="entry__excerpt">Las piedras absorben energía. Métodos naturales para limpiarlas y refrescar su poder.</p>
+            </a>
+            <a href="#" class="entry reveal" data-delay="1">
+                <div class="entry__media"><img src="https://images.unsplash.com/photo-1619166855707-bba87a7772a2?w=900&q=80&auto=format&fit=crop" alt="Rincón de meditación"></div>
+                <div class="entry__meta"><span>Espacios</span><span>9 min</span></div>
+                <h3 class="entry__title">Cómo crear un rincón de meditación en casa</h3>
+                <p class="entry__excerpt">Una guía para diseñar tu propio refugio de paz y contemplación, por pequeño que sea el espacio.</p>
+            </a>
+            <a href="#" class="entry reveal">
+                <div class="entry__media"><img src="https://images.unsplash.com/photo-1564462369724-4003221599e2?w=900&q=80&auto=format&fit=crop" alt="Fuentes de agua"></div>
+                <div class="entry__meta"><span>Bienestar</span><span>6 min</span></div>
+                <h3 class="entry__title">Fuentes de agua: equilibrio y abundancia</h3>
+                <p class="entry__excerpt">El agua en movimiento trae fluidez y armonía. Cómo integrar una fuente en tu hogar.</p>
+            </a>
+            <a href="#" class="entry reveal" data-delay="1">
+                <div class="entry__media"><img src="https://images.unsplash.com/photo-1626937526107-ca0be0eecccd?w=900&q=80&auto=format&fit=crop" alt="Aromas"></div>
+                <div class="entry__meta"><span>Aromas</span><span>7 min</span></div>
+                <h3 class="entry__title">Aromas para relajación, enfoque y descanso</h3>
+                <p class="entry__excerpt">Inciensos y esencias transforman la energía. Los mejores aromas para cada propósito.</p>
+            </a>
+            <a href="#" class="entry reveal">
+                <div class="entry__media"><img src="https://images.unsplash.com/photo-1593259213062-57b0ce5906cf?w=900&q=80&auto=format&fit=crop" alt="Primera piedra"></div>
+                <div class="entry__meta"><span>Iniciación</span><span>8 min</span></div>
+                <h3 class="entry__title">Guía para elegir tu primera piedra</h3>
+                <p class="entry__excerpt">¿Nuevo en el mundo de los cristales? Cómo elegir la piedra perfecta para empezar tu camino.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section">
+        <div class="invite reveal">
+            <span class="eyebrow">Carta de Armonía</span>
+            <h2 class="display">Recibí nuestras lecturas.</h2>
+            <p class="lead">Guías, rituales e inspiración para transformar tu espacio. Una carta serena, una vez al mes.</p>
+            <form class="newsletter" onsubmit="handleNewsletter(event)">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p class="footer-quote">«La armonía comienza en los espacios que habitamos.»</p>
+        <div class="footer-grid">
+            <div class="footer-col"><span class="brand-foot">ARMONÍA ZEN</span><p style="color:var(--ivory-soft); margin-top:18px; max-width:260px; font-size:0.92rem;">Decoración consciente para espacios que transmiten calma. Buenos Aires, Argentina.</p></div>
+            <div class="footer-col"><h4>Colecciones</h4><a href="catalogo.html">Tienda</a><a href="piedras.html">Piedras</a><a href="plantas.html">Plantas</a></div>
+            <div class="footer-col"><h4>Casa</h4><a href="nosotros.html">Filosofía</a><a href="blog.html">Journal</a><a href="contacto.html">Contacto</a></div>
+            <div class="footer-col"><h4>Seguinos</h4><a href="#" target="_blank">Instagram</a><a href="https://wa.me/5491234567890" target="_blank">WhatsApp</a><a href="#" target="_blank">Pinterest</a></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Armonía Zen. Todos los derechos reservados.</span><span>Hecho con intención en Buenos Aires.</span></div>
+    </footer>
+
+    <aside class="cart-panel" id="cart-panel">
+        <div class="cart-panel__head"><h3>Carrito</h3><button class="cart-close" id="cart-close">&times;</button></div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-panel__foot"><div class="cart-total"><span>Subtotal</span><span id="cart-subtotal">$0</span></div><button class="btn btn--solid" onclick="checkoutWhatsApp()">Finalizar por WhatsApp</button></div>
+    </aside>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <a href="https://wa.me/5491234567890" target="_blank" class="wa-float" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.737-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+    </a>
+    <div class="toast" id="toast"></div>
+
+    <script src="js/store.js"></script>
+    <script src="js/armonia.js"></script>
+    <script src="js/site-content.js"></script>
+</body>
+</html>

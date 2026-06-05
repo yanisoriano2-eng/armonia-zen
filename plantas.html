@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas — Armonía Zen</title>
+    <meta name="description" content="Plantas de interior que respiran con vos: monstera, pothos, bambú, espada de San Jorge y filodendro. Naturaleza viva para tu hogar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/armonia.css">
+</head>
+<body>
+
+    <header class="site-header scrolled" id="header">
+        <a href="index.html" class="brand">ARMONÍA ZEN</a>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Tienda</a>
+            <a href="piedras.html">Piedras</a>
+            <a href="plantas.html">Plantas</a>
+            <a href="blog.html">Journal</a>
+            <a href="nosotros.html">Filosofía</a>
+            <button class="cart-trigger" id="cart-trigger">Carrito<sup id="cart-count">0</sup></button>
+            <a href="contacto.html" class="nav__cta">Contacto</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Tienda</a>
+        <a href="piedras.html">Piedras</a>
+        <a href="plantas.html">Plantas</a>
+        <a href="blog.html">Journal</a>
+        <a href="nosotros.html">Filosofía</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero__media" data-parallax="0.25" style="background-image: url('https://images.unsplash.com/photo-1764422097784-0eaa2340d0e1?w=2000&q=80&auto=format&fit=crop');"></div>
+        <div class="page-hero__inner">
+            <span class="eyebrow">Naturaleza · Vida · Bienestar</span>
+            <h1 class="page-hero__title">Plantas</h1>
+            <p class="page-hero__text">Más que decoración, son presencia viva. Oxigenan, suavizan las líneas rectas y traen al interior el ritmo sereno de lo que crece sin prisa.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-head reveal">
+            <span class="eyebrow">La colección viva</span>
+            <h2 class="display">Plantas que respiran con vos.</h2>
+            <p class="lead" style="margin-top:18px;">Elegimos especies nobles, resistentes y de bajo mantenimiento, para que cuidar de ellas sea un placer y no una tarea.</p>
+        </div>
+
+        <div class="feature-rows">
+            <article class="feature-row reveal">
+                <div class="feature-row__media"><img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?w=1000&q=80&auto=format&fit=crop" alt="Monstera Deliciosa"></div>
+                <div class="feature-row__body">
+                    <span class="feature-row__index">01 — Planta</span>
+                    <h3 class="feature-row__title">Monstera Deliciosa</h3>
+                    <p class="feature-row__sub">Elegancia · Presencia · Frescura</p>
+                    <p class="feature-row__text">La reina del interiorismo contemporáneo. Sus hojas perforadas dibujan sombras vivas en la pared y llenan un rincón vacío con una elegancia tropical inconfundible. Resistente y agradecida.</p>
+                    <div class="feature-meta"><span>Luz: indirecta</span><span>Riego: moderado</span></div>
+                    <div class="feature-row__price">desde $28.000</div>
+                    <button class="btn" onclick="addToCart('Monstera Deliciosa', 28000)">Añadir al carrito</button>
+                </div>
+            </article>
+
+            <article class="feature-row feature-row--reverse reveal">
+                <div class="feature-row__media"><img src="https://images.unsplash.com/photo-1537039557108-4a42c334fd5e?w=1000&q=80&auto=format&fit=crop" alt="Pothos"></div>
+                <div class="feature-row__body">
+                    <span class="feature-row__index">02 — Planta</span>
+                    <h3 class="feature-row__title">Pothos</h3>
+                    <p class="feature-row__sub">Purificación · Adaptación · Generosidad</p>
+                    <p class="feature-row__text">La más indulgente de todas. Crece colgando o trepando, tolera el descuido y purifica el aire mientras lo hace. Perfecta para estantes altos donde su cascada verde puede caer libre.</p>
+                    <div class="feature-meta"><span>Luz: baja a media</span><span>Riego: bajo</span></div>
+                    <div class="feature-row__price">desde $16.000</div>
+                    <button class="btn" onclick="addToCart('Pothos', 16000)">Añadir al carrito</button>
+                </div>
+            </article>
+
+            <article class="feature-row reveal">
+                <div class="feature-row__media"><img src="https://images.unsplash.com/photo-1532920161727-344adb090f7f?w=1000&q=80&auto=format&fit=crop" alt="Bambú de la Suerte"></div>
+                <div class="feature-row__body">
+                    <span class="feature-row__index">03 — Planta</span>
+                    <h3 class="feature-row__title">Bambú de la Suerte</h3>
+                    <p class="feature-row__sub">Abundancia · Protección · Flexibilidad</p>
+                    <p class="feature-row__text">Símbolo de prosperidad en el Feng Shui. Crece en agua o en tierra, casi sin pedir nada, y aporta verticalidad y orden. Tradicionalmente se ubica en el este del hogar para atraer la buena fortuna.</p>
+                    <div class="feature-meta"><span>Luz: indirecta</span><span>Riego: en agua</span></div>
+                    <div class="feature-row__price">desde $19.000</div>
+                    <button class="btn" onclick="addToCart('Bambú de la Suerte', 19000)">Añadir al carrito</button>
+                </div>
+            </article>
+
+            <article class="feature-row feature-row--reverse reveal">
+                <div class="feature-row__media"><img src="https://images.unsplash.com/photo-1593482892290-f54927ae1bb6?w=1000&q=80&auto=format&fit=crop" alt="Espada de San Jorge"></div>
+                <div class="feature-row__body">
+                    <span class="feature-row__index">04 — Planta</span>
+                    <h3 class="feature-row__title">Espada de San Jorge</h3>
+                    <p class="feature-row__sub">Protección · Poder · Resiliencia</p>
+                    <p class="feature-row__text">Indestructible y arquitectónica. Sus hojas erguidas como espadas purifican el aire incluso de noche, y aguantan la sequía sin quejarse. La planta perfecta para quien cree que no sabe cuidar plantas.</p>
+                    <div class="feature-meta"><span>Luz: cualquiera</span><span>Riego: mínimo</span></div>
+                    <div class="feature-row__price">desde $24.000</div>
+                    <button class="btn" onclick="addToCart('Espada de San Jorge', 24000)">Añadir al carrito</button>
+                </div>
+            </article>
+
+            <article class="feature-row reveal">
+                <div class="feature-row__media"><img src="https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?w=1000&q=80&auto=format&fit=crop" alt="Filodendro Corazón"></div>
+                <div class="feature-row__body">
+                    <span class="feature-row__index">05 — Planta</span>
+                    <h3 class="feature-row__title">Filodendro Corazón</h3>
+                    <p class="feature-row__sub">Creatividad · Crecimiento · Calidez</p>
+                    <p class="feature-row__text">Hojas en forma de corazón que se enredan con suavidad por donde las dejes. De crecimiento generoso y carácter dócil, es ideal para colgar y dejar que el verde abrace una esquina del cuarto.</p>
+                    <div class="feature-meta"><span>Luz: media</span><span>Riego: moderado</span></div>
+                    <div class="feature-row__price">desde $17.000</div>
+                    <button class="btn" onclick="addToCart('Filodendro Corazón', 17000)">Añadir al carrito</button>
+                </div>
+            </article>
+
+            <article class="feature-row feature-row--reverse reveal">
+                <div class="feature-row__media"><img src="https://images.unsplash.com/photo-1641977563529-7b617571393d?w=1000&q=80&auto=format&fit=crop" alt="Filodendro Brasil"></div>
+                <div class="feature-row__body">
+                    <span class="feature-row__index">06 — Planta</span>
+                    <h3 class="feature-row__title">Filodendro Brasil</h3>
+                    <p class="feature-row__sub">Energía · Color · Movimiento</p>
+                    <p class="feature-row__text">La versión luminosa de la anterior: sus hojas combinan dos verdes que parecen pintados a mano. Trae movimiento y un toque vibrante a los rincones que piden un poco más de vida.</p>
+                    <div class="feature-meta"><span>Luz: media</span><span>Riego: moderado</span></div>
+                    <div class="feature-row__price">desde $18.000</div>
+                    <button class="btn" onclick="addToCart('Filodendro Brasil', 18000)">Añadir al carrito</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- GUÍA DE CUIDADO -->
+    <section class="section section--moss">
+        <div class="section-head reveal">
+            <span class="eyebrow">Guía de cuidado</span>
+            <h2 class="display">Acompañar lo que crece.</h2>
+        </div>
+        <div class="tips-grid">
+            <div class="tip reveal"><span class="tip__num">I</span><h3 class="tip__title">La luz justa</h3><p class="tip__text">La mayoría prefiere luz indirecta y abundante. Evitá el sol directo del mediodía, que quema las hojas.</p></div>
+            <div class="tip reveal" data-delay="1"><span class="tip__num">II</span><h3 class="tip__title">Riego consciente</h3><p class="tip__text">Mejor poco que de más. Tocá la tierra: si los primeros centímetros están secos, es momento de regar.</p></div>
+            <div class="tip reveal" data-delay="2"><span class="tip__num">III</span><h3 class="tip__title">Ambiente y humedad</h3><p class="tip__text">Agrupá las plantas: juntas crean su propio microclima. Un rociado ocasional las mantiene frescas.</p></div>
+            <div class="tip reveal"><span class="tip__num">IV</span><h3 class="tip__title">Hojas limpias</h3><p class="tip__text">Pasales un paño húmedo cada tanto. Sin polvo, respiran mejor y reflejan más luz.</p></div>
+            <div class="tip reveal" data-delay="1"><span class="tip__num">V</span><h3 class="tip__title">Trasplante a tiempo</h3><p class="tip__text">Cuando las raíces asoman por el drenaje, pedí una maceta más grande. Hacelo en primavera.</p></div>
+            <div class="tip reveal" data-delay="2"><span class="tip__num">VI</span><h3 class="tip__title">Conexión diaria</h3><p class="tip__text">Observalas. Una planta te avisa antes de marchitarse: aprender a leerla es parte del ritual.</p></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="invite reveal">
+            <span class="eyebrow">Para tu espacio</span>
+            <h2 class="display">¿Qué planta va con vos?</h2>
+            <p class="lead">Decinos cuánta luz tenés y cuánto tiempo querés dedicarle. Te recomendamos la compañera ideal.</p>
+            <div style="margin-top:34px;"><a href="contacto.html" class="btn btn--solid">Pedir una recomendación</a></div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p class="footer-quote">«La armonía comienza en los espacios que habitamos.»</p>
+        <div class="footer-grid">
+            <div class="footer-col"><span class="brand-foot">ARMONÍA ZEN</span><p style="color:var(--ivory-soft); margin-top:18px; max-width:260px; font-size:0.92rem;">Decoración consciente para espacios que transmiten calma. Buenos Aires, Argentina.</p></div>
+            <div class="footer-col"><h4>Colecciones</h4><a href="catalogo.html">Tienda</a><a href="piedras.html">Piedras</a><a href="plantas.html">Plantas</a></div>
+            <div class="footer-col"><h4>Casa</h4><a href="nosotros.html">Filosofía</a><a href="blog.html">Journal</a><a href="contacto.html">Contacto</a></div>
+            <div class="footer-col"><h4>Seguinos</h4><a href="#" target="_blank">Instagram</a><a href="https://wa.me/5491234567890" target="_blank">WhatsApp</a><a href="#" target="_blank">Pinterest</a></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Armonía Zen. Todos los derechos reservados.</span><span>Hecho con intención en Buenos Aires.</span></div>
+    </footer>
+
+    <aside class="cart-panel" id="cart-panel">
+        <div class="cart-panel__head"><h3>Carrito</h3><button class="cart-close" id="cart-close">&times;</button></div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-panel__foot"><div class="cart-total"><span>Subtotal</span><span id="cart-subtotal">$0</span></div><button class="btn btn--solid" onclick="checkoutWhatsApp()">Finalizar por WhatsApp</button></div>
+    </aside>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <a href="https://wa.me/5491234567890" target="_blank" class="wa-float" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.737-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+    </a>
+    <div class="toast" id="toast"></div>
+
+    <script src="js/store.js"></script>
+    <script src="js/armonia.js"></script>
+    <script src="js/site-content.js"></script>
+</body>
+</html>

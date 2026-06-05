@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armonía Zen — Decoración consciente para espacios que transmiten calma</title>
+    <meta name="description" content="Armonía Zen selecciona piezas inspiradas en la naturaleza, el bienestar y la armonía para crear hogares que invitan a detenerse, respirar y reconectar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/armonia.css">
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader__mark">ARMONÍA ZEN</div>
+        <div class="preloader__line"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="header">
+        <a href="index.html" class="brand">ARMONÍA ZEN</a>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="#esencia">Esencia</a>
+            <a href="#colecciones">Colecciones</a>
+            <a href="#espacios">Espacios</a>
+            <a href="catalogo.html">Tienda</a>
+            <a href="blog.html">Journal</a>
+            <a href="nosotros.html">Filosofía</a>
+            <button class="cart-trigger" id="cart-trigger">Carrito<sup id="cart-count">0</sup></button>
+            <a href="contacto.html" class="nav__cta">Contacto</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Inicio</a>
+        <a href="#esencia">Esencia</a>
+        <a href="#colecciones">Colecciones</a>
+        <a href="#espacios">Espacios</a>
+        <a href="catalogo.html">Tienda</a>
+        <a href="blog.html">Journal</a>
+        <a href="nosotros.html">Filosofía</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero__media" data-parallax="0.3" style="background-image: url('https://images.unsplash.com/photo-1512972972907-6d71529c5e92?w=2000&q=80&auto=format&fit=crop');"></div>
+        <div class="hero__inner">
+            <span class="eyebrow">Decoración consciente · Bienestar · Hogar</span>
+            <h1 class="hero__title">ARMONÍA ZEN</h1>
+            <p class="hero__subtitle">Decoración consciente para espacios que transmiten calma.</p>
+            <p class="hero__text">Creemos que cada objeto tiene el poder de transformar cómo se siente un espacio. Seleccionamos piezas inspiradas en la naturaleza, el bienestar y la armonía para crear hogares que invitan a detenerse, respirar y reconectar.</p>
+            <div class="hero__actions">
+                <a href="catalogo.html" class="btn btn--solid">Explorar Colección</a>
+                <a href="#esencia" class="btn">Descubrir Nuestra Filosofía</a>
+            </div>
+        </div>
+        <div class="hero__scroll">
+            <span>Scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ESENCIA -->
+    <section class="section section--moss" id="esencia">
+        <div class="split">
+            <div class="split__media reveal">
+                <img src="https://images.unsplash.com/photo-1650208532541-572697b3dd40?w=1100&q=80&auto=format&fit=crop" alt="Interior zen con vegetación y luz cálida">
+                <div class="split__tag">
+                    <strong>2019</strong>
+                    <span>Desde Buenos Aires</span>
+                </div>
+            </div>
+            <div class="split__body reveal" data-delay="1">
+                <span class="eyebrow">Nuestra esencia</span>
+                <h2 class="display">El arte de crear espacios con intención.</h2>
+                <div class="text-block lead">
+                    <p>Armonía Zen nació de una certeza simple: el lugar donde vivimos moldea, en silencio, cómo nos sentimos. Una habitación puede tensar o puede sostener. Puede acelerar o puede invitar a la pausa. Quisimos crear una marca para quienes eligen lo segundo.</p>
+                    <p>Decorar conscientemente no es acumular objetos bonitos. Es elegir cada pieza por la energía que aporta — la calidez de una lámpara de sal al atardecer, el murmullo de una fuente, la presencia serena de una planta, el peso honesto de una piedra entre las manos.</p>
+                    <p>Trabajamos en la frontera entre el diseño y el bienestar: piezas seleccionadas por su belleza, sí, pero sobre todo por cómo transforman el estado de quien habita el espacio. Porque un hogar en armonía no se mira. Se respira.</p>
+                </div>
+                <div style="margin-top:36px;">
+                    <a href="nosotros.html" class="link-underline">Conocer nuestra filosofía</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLECCIONES — bandas editoriales -->
+    <section class="collections" id="colecciones">
+        <div class="band band--left reveal">
+            <div class="band__media" data-parallax="0.15" style="background-image: url('https://images.unsplash.com/photo-1609850280339-b85f1fd5d351?w=2000&q=80&auto=format&fit=crop');"></div>
+            <div class="band__content">
+                <span class="band__index">01 — Colección</span>
+                <h3 class="band__title">Luz</h3>
+                <p class="band__text">Lámparas de sal del Himalaya y velas que tiñen la tarde de ámbar. La luz cálida no ilumina un espacio: lo transforma en refugio, suaviza las horas y prepara el cuerpo para el descanso.</p>
+                <a href="catalogo.html" class="link-underline">Ver la colección</a>
+            </div>
+        </div>
+
+        <div class="band band--right reveal">
+            <div class="band__media" data-parallax="0.15" style="background-image: url('https://images.unsplash.com/photo-1609216970378-ce61cd74a187?w=2000&q=80&auto=format&fit=crop');"></div>
+            <div class="band__content">
+                <span class="band__index">02 — Colección</span>
+                <h3 class="band__title">Tierra</h3>
+                <p class="band__text">Cristales y piedras nacidos en el corazón de la tierra. Amatista, cuarzo, selenita — piezas ancestrales que anclan, protegen y recuerdan que la calma también tiene raíces.</p>
+                <a href="piedras.html" class="link-underline">Ver la colección</a>
+            </div>
+        </div>
+
+        <div class="band band--left reveal">
+            <div class="band__media" data-parallax="0.15" style="background-image: url('https://images.unsplash.com/photo-1564462369724-4003221599e2?w=2000&q=80&auto=format&fit=crop');"></div>
+            <div class="band__content">
+                <span class="band__index">03 — Colección</span>
+                <h3 class="band__title">Agua</h3>
+                <p class="band__text">Fuentes que devuelven el movimiento al hogar. El agua fluyendo trae sonido, frescura y abundancia — un recordatorio constante de que todo, incluso la quietud, está vivo.</p>
+                <a href="catalogo.html" class="link-underline">Ver la colección</a>
+            </div>
+        </div>
+
+        <div class="band band--right reveal">
+            <div class="band__media" data-parallax="0.15" style="background-image: url('https://images.unsplash.com/photo-1639390167093-9c62311fe84d?w=2000&q=80&auto=format&fit=crop');"></div>
+            <div class="band__content">
+                <span class="band__index">04 — Colección</span>
+                <h3 class="band__title">Aroma</h3>
+                <p class="band__text">Inciensos, esencias y maderas que cambian el clima emocional de una habitación. El aroma es la forma más íntima de la memoria: una nota de sándalo basta para volver al centro.</p>
+                <a href="catalogo.html" class="link-underline">Ver la colección</a>
+            </div>
+        </div>
+
+        <div class="band band--left reveal">
+            <div class="band__media" data-parallax="0.15" style="background-image: url('https://images.unsplash.com/photo-1764422097784-0eaa2340d0e1?w=2000&q=80&auto=format&fit=crop');"></div>
+            <div class="band__content">
+                <span class="band__index">05 — Colección</span>
+                <h3 class="band__title">Naturaleza</h3>
+                <p class="band__text">Plantas que respiran junto a nosotros. Más que decoración, son presencia viva: oxigenan, suavizan las líneas rectas y traen al interior el ritmo sereno de lo que crece sin prisa.</p>
+                <a href="plantas.html" class="link-underline">Ver la colección</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPACIOS ZEN — galería -->
+    <section class="section section--moss" id="espacios">
+        <div class="section-head reveal">
+            <span class="eyebrow">Espacios Armonía</span>
+            <h2 class="display">Ambientes pensados para habitar en calma.</h2>
+        </div>
+        <div class="spaces-grid">
+            <div class="space space--tall reveal">
+                <img src="https://images.unsplash.com/photo-1568990416308-c998af4cf9ee?w=900&q=80&auto=format&fit=crop" alt="Rincón de lectura">
+                <span class="space__label">Rincón de lectura · luz de la mañana</span>
+            </div>
+            <div class="space space--wide reveal" data-delay="1">
+                <img src="https://images.unsplash.com/photo-1600210491305-7396500b5b31?w=1400&q=80&auto=format&fit=crop" alt="Dormitorio sereno">
+                <span class="space__label">Dormitorio sereno</span>
+            </div>
+            <div class="space space--half reveal" data-delay="2">
+                <img src="https://images.unsplash.com/photo-1551215110-b4e2522d9b74?w=900&q=80&auto=format&fit=crop" alt="Living con vegetación">
+                <span class="space__label">Living con vegetación</span>
+            </div>
+            <div class="space space--full reveal">
+                <img src="https://images.unsplash.com/photo-1619166855707-bba87a7772a2?w=1800&q=80&auto=format&fit=crop" alt="Espacio de meditación">
+                <span class="space__label">Espacio de meditación</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="section">
+        <div class="section-head reveal">
+            <span class="eyebrow">Selección</span>
+            <h2 class="display">Piezas destacadas</h2>
+            <p class="lead" style="margin-top:18px;">Una pequeña selección de la colección. Cada objeto, elegido por cómo cambia el aire de un espacio.</p>
+        </div>
+        <div class="products">
+            <article class="product reveal">
+                <div class="product__media">
+                    <img src="https://images.unsplash.com/photo-1623241923490-5b2fd532828f?w=700&q=80&auto=format&fit=crop" alt="Lámpara de sal del Himalaya">
+                    <div class="product__quick">
+                        <button onclick="addToCart('Lámpara de Sal del Himalaya', 45000)">Añadir · $45.000</button>
+                    </div>
+                </div>
+                <div class="product__cat">Luz</div>
+                <h3 class="product__name">Lámpara de Sal del Himalaya</h3>
+                <div class="product__price">$45.000</div>
+            </article>
+
+            <article class="product reveal" data-delay="1">
+                <div class="product__media">
+                    <img src="https://images.unsplash.com/photo-1585383234137-2367d3c5302d?w=700&q=80&auto=format&fit=crop" alt="Amatista natural">
+                    <div class="product__quick">
+                        <button onclick="addToCart('Amatista Natural', 22000)">Añadir · $22.000</button>
+                    </div>
+                </div>
+                <div class="product__cat">Tierra</div>
+                <h3 class="product__name">Amatista Natural</h3>
+                <div class="product__price">$22.000</div>
+            </article>
+
+            <article class="product reveal" data-delay="2">
+                <div class="product__media">
+                    <img src="https://images.unsplash.com/photo-1553090298-50fc519730d2?w=700&q=80&auto=format&fit=crop" alt="Fuente de agua zen">
+                    <div class="product__quick">
+                        <button onclick="addToCart('Fuente de Agua Zen', 65000)">Añadir · $65.000</button>
+                    </div>
+                </div>
+                <div class="product__cat">Agua</div>
+                <h3 class="product__name">Fuente de Agua Zen</h3>
+                <div class="product__price">$65.000</div>
+            </article>
+
+            <article class="product reveal">
+                <div class="product__media">
+                    <img src="https://images.unsplash.com/photo-1596045571419-664297d8f502?w=700&q=80&auto=format&fit=crop" alt="Buda meditativo">
+                    <div class="product__quick">
+                        <button onclick="addToCart('Buda Meditativo', 35000)">Añadir · $35.000</button>
+                    </div>
+                </div>
+                <div class="product__cat">Presencia</div>
+                <h3 class="product__name">Buda Meditativo</h3>
+                <div class="product__price">$35.000</div>
+            </article>
+
+            <article class="product reveal" data-delay="1">
+                <div class="product__media">
+                    <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?w=700&q=80&auto=format&fit=crop" alt="Planta Monstera">
+                    <div class="product__quick">
+                        <button onclick="addToCart('Planta Monstera', 28000)">Añadir · $28.000</button>
+                    </div>
+                </div>
+                <div class="product__cat">Naturaleza</div>
+                <h3 class="product__name">Monstera Deliciosa</h3>
+                <div class="product__price">$28.000</div>
+            </article>
+
+            <article class="product reveal" data-delay="2">
+                <div class="product__media">
+                    <img src="https://images.unsplash.com/photo-1626937526107-ca0be0eecccd?w=700&q=80&auto=format&fit=crop" alt="Incienso de sándalo">
+                    <div class="product__quick">
+                        <button onclick="addToCart('Incienso de Sándalo', 12000)">Añadir · $12.000</button>
+                    </div>
+                </div>
+                <div class="product__cat">Aroma</div>
+                <h3 class="product__name">Incienso de Sándalo</h3>
+                <div class="product__price">$12.000</div>
+            </article>
+        </div>
+        <div style="text-align:center; margin-top:clamp(50px,7vw,90px);" class="reveal">
+            <a href="catalogo.html" class="btn">Ver toda la colección</a>
+        </div>
+    </section>
+
+    <!-- RITUALES -->
+    <section class="section section--ivory">
+        <div class="section-head reveal">
+            <span class="eyebrow">Rituales</span>
+            <h2 class="display">Pequeños gestos para armonizar el hogar.</h2>
+        </div>
+        <div class="rituals">
+            <article class="ritual reveal">
+                <div>
+                    <span class="ritual__num">I</span>
+                    <h3 class="ritual__title" style="color:var(--forest);">Crear un rincón zen</h3>
+                </div>
+                <p class="ritual__text" style="color:rgba(11,34,25,0.72);">Elegí el lugar más tranquilo de la casa. Una luz cálida, un textil natural en el suelo, una planta, una piedra y nada más. El secreto no está en llenar el espacio, sino en dejar que respire. Un rincón para sentarse, sin pantallas, a no hacer nada.</p>
+            </article>
+            <article class="ritual reveal">
+                <div>
+                    <span class="ritual__num">II</span>
+                    <h3 class="ritual__title" style="color:var(--forest);">Usar una lámpara de sal</h3>
+                </div>
+                <p class="ritual__text" style="color:rgba(11,34,25,0.72);">Encendela al atardecer, cuando la luz del día empieza a irse. Ubicala en el dormitorio o el espacio de lectura, a media altura. Su resplandor ámbar le indica al cuerpo que es momento de bajar el ritmo. Dejala como única luz una hora antes de dormir.</p>
+            </article>
+            <article class="ritual reveal">
+                <div>
+                    <span class="ritual__num">III</span>
+                    <h3 class="ritual__title" style="color:var(--forest);">Incorporar una fuente</h3>
+                </div>
+                <p class="ritual__text" style="color:rgba(11,34,25,0.72);">El agua en movimiento cambia por completo el clima de un ambiente. Colocá la fuente cerca de la entrada o en el living, lejos de la zona de descanso. Su sonido constante enmascara el ruido y trae una sensación de fluidez y abundancia.</p>
+            </article>
+            <article class="ritual reveal">
+                <div>
+                    <span class="ritual__num">IV</span>
+                    <h3 class="ritual__title" style="color:var(--forest);">Elegir tus cristales</h3>
+                </div>
+                <p class="ritual__text" style="color:rgba(11,34,25,0.72);">No elijas la piedra por su nombre, elegila por cómo te llama. Sostené varias en la mano y quedate con la que te resulte más serena. Límpiala bajo agua o a la luz de la luna llena antes de darle un lugar fijo en tu casa.</p>
+            </article>
+            <article class="ritual reveal">
+                <div>
+                    <span class="ritual__num">V</span>
+                    <h3 class="ritual__title" style="color:var(--forest);">Armonizar un ambiente</h3>
+                </div>
+                <p class="ritual__text" style="color:rgba(11,34,25,0.72);">Trabajá los cinco elementos: luz cálida, una planta viva, agua en movimiento, un aroma sutil y una pieza con peso — madera, piedra o cerámica. Cuando los cinco conviven en equilibrio, el espacio deja de sentirse decorado y empieza a sentirse habitado.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- JOURNAL -->
+    <section class="section section--moss">
+        <div class="section-head reveal">
+            <span class="eyebrow">Journal</span>
+            <h2 class="display">Lecturas para una vida más consciente.</h2>
+        </div>
+        <div class="journal">
+            <a href="blog.html" class="entry reveal">
+                <div class="entry__media">
+                    <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?w=1100&q=80&auto=format&fit=crop" alt="Decorar con Feng Shui">
+                </div>
+                <div class="entry__meta"><span>Decoración</span><span>10 min</span></div>
+                <h3 class="entry__title">Feng Shui: el arte de dejar fluir la energía del hogar</h3>
+                <p class="entry__excerpt">Los principios milenarios para organizar el espacio de modo que la energía circule libre, y cómo aplicarlos sin transformar tu casa por completo.</p>
+            </a>
+            <a href="blog.html" class="entry reveal" data-delay="1">
+                <div class="entry__media">
+                    <img src="https://images.unsplash.com/photo-1632980205460-e490e885e848?w=1100&q=80&auto=format&fit=crop" alt="Piedras energéticas">
+                </div>
+                <div class="entry__meta"><span>Guía</span><span>8 min</span></div>
+                <h3 class="entry__title">El significado de las piedras y cómo elegir la tuya</h3>
+                <p class="entry__excerpt">Amatista, cuarzo rosa, citrino, selenita. Una guía honesta para entender qué representa cada cristal y encontrar el que acompaña tu momento.</p>
+            </a>
+        </div>
+        <div style="text-align:center; margin-top:clamp(50px,7vw,90px);" class="reveal">
+            <a href="blog.html" class="btn">Leer el journal</a>
+        </div>
+    </section>
+
+    <!-- INVITACIÓN / NEWSLETTER -->
+    <section class="section">
+        <div class="invite reveal">
+            <span class="eyebrow">Carta de Armonía</span>
+            <h2 class="display">Sumate a nuestra comunidad.</h2>
+            <p class="lead">Rituales, guías y nuevas piezas. Una carta serena, sin ruido, una vez al mes.</p>
+            <form class="newsletter" onsubmit="handleNewsletter(event)">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p class="footer-quote">«La armonía comienza en los espacios que habitamos.»</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <span class="brand-foot">ARMONÍA ZEN</span>
+                <p style="color:var(--ivory-soft); margin-top:18px; max-width:260px; font-size:0.92rem;">Decoración consciente para espacios que transmiten calma. Buenos Aires, Argentina.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Colecciones</h4>
+                <a href="catalogo.html">Tienda</a>
+                <a href="piedras.html">Piedras</a>
+                <a href="plantas.html">Plantas</a>
+                <a href="catalogo.html">Luz & Aroma</a>
+            </div>
+            <div class="footer-col">
+                <h4>Casa</h4>
+                <a href="nosotros.html">Filosofía</a>
+                <a href="blog.html">Journal</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            <div class="footer-col">
+                <h4>Seguinos</h4>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="https://wa.me/5491234567890" target="_blank">WhatsApp</a>
+                <a href="#" target="_blank">Pinterest</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Armonía Zen. Todos los derechos reservados.</span>
+            <span>Hecho con intención en Buenos Aires.</span>
+        </div>
+    </footer>
+
+    <!-- CARRITO -->
+    <aside class="cart-panel" id="cart-panel">
+        <div class="cart-panel__head">
+            <h3>Carrito</h3>
+            <button class="cart-close" id="cart-close">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-panel__foot">
+            <div class="cart-total"><span>Subtotal</span><span id="cart-subtotal">$0</span></div>
+            <button class="btn btn--solid" onclick="checkoutWhatsApp()">Finalizar por WhatsApp</button>
+        </div>
+    </aside>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/5491234567890" target="_blank" class="wa-float" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.737-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+    </a>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/store.js"></script>
+    <script src="js/armonia.js"></script>
+    <script src="js/site-content.js"></script>
+</body>
+</html>
