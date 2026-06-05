@@ -3,5 +3,5 @@
    Supabase Dashboard → Settings → API
    ============================================================ */
 
-var SUPABASE_URL  = 'PEGAR_URL_AQUI';   // https://xxxxxxxxxxxx.supabase.co
-var SUPABASE_ANON = 'PEGAR_ANON_AQUI';  // eyJhbGciOi...  (clave anon/public)
+var SUPABASE_URL  = 'https://yzmgtgavnmjpehnmmqwu.supabase.co';
+var SUPABASE_ANON = 'sb_publishable_whkhIz7yKEDMF3glsanV2g_s7JwJWyR';
