@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" itemscope itemtype="https://schema.org/Product">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="doc-title">Producto — Armonía Zen</title>
     <meta name="description" id="doc-desc" content="Decoración consciente para espacios que transmiten calma.">
+    <meta property="og:title" id="og-title" content="Producto — Armonía Zen">
+    <meta property="og:description" id="og-desc" content="">
+    <meta property="og:image" id="og-image" content="">
+    <meta property="og:type" content="product">
+    <link rel="canonical" id="doc-canonical" href="">
+    <script type="application/ld+json" id="schema-product">{}</script>
+    <script type="application/ld+json" id="schema-faq">{}</script>
+    <script type="application/ld+json" id="schema-breadcrumb">{}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,129 +20,366 @@
 </head>
 <body class="prod-body">
 
-    <header class="site-header scrolled" id="header">
-        <a href="index.html" class="brand">ARMONÍA ZEN</a>
-        <nav class="nav">
-            <a href="index.html">Inicio</a>
-            <a href="catalogo.html">Tienda</a>
-            <a href="piedras.html">Piedras</a>
-            <a href="plantas.html">Plantas</a>
-            <a href="blog.html">Journal</a>
-            <a href="nosotros.html">Filosofía</a>
-            <button class="cart-trigger" id="cart-trigger">Carrito<sup id="cart-count">0</sup></button>
-            <a href="contacto.html" class="nav__cta">Contacto</a>
-        </nav>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
-    </header>
-
-    <nav class="mobile-nav" id="mobile-nav">
+<!-- ===== HEADER ===== -->
+<header class="site-header scrolled" id="header">
+    <a href="index.html" class="brand">ARMONÍA ZEN</a>
+    <nav class="nav">
         <a href="index.html">Inicio</a>
         <a href="catalogo.html">Tienda</a>
         <a href="piedras.html">Piedras</a>
         <a href="plantas.html">Plantas</a>
         <a href="blog.html">Journal</a>
         <a href="nosotros.html">Filosofía</a>
-        <a href="contacto.html">Contacto</a>
+        <button class="cart-trigger" id="cart-trigger">Carrito<sup id="cart-count">0</sup></button>
+        <a href="contacto.html" class="nav__cta">Contacto</a>
     </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Tienda</a>
+    <a href="piedras.html">Piedras</a>
+    <a href="plantas.html">Plantas</a>
+    <a href="blog.html">Journal</a>
+    <a href="nosotros.html">Filosofía</a>
+    <a href="contacto.html">Contacto</a>
+</nav>
 
-    <!-- BREADCRUMB -->
-    <div class="prod-breadcrumb" id="breadcrumb">
-        <a href="index.html">Inicio</a><span>·</span>
-        <a href="catalogo.html">Tienda</a><span>·</span>
-        <span id="bc-name">Producto</span>
+<!-- ===== BREADCRUMB ===== -->
+<nav class="ph-breadcrumb" aria-label="Breadcrumb" id="ph-breadcrumb">
+    <a href="index.html">Inicio</a>
+    <svg width="8" height="8" viewBox="0 0 8 8"><path d="M2 1l3 3-3 3" stroke="currentColor" stroke-width="1" fill="none"/></svg>
+    <a href="catalogo.html">Tienda</a>
+    <svg width="8" height="8" viewBox="0 0 8 8"><path d="M2 1l3 3-3 3" stroke="currentColor" stroke-width="1" fill="none"/></svg>
+    <span id="ph-bc-name">Producto</span>
+</nav>
+
+<!-- ===== SKELETON ===== -->
+<div class="ph-skeleton" id="ph-skeleton">
+    <div class="ph-skeleton__gallery"><div class="ph-skel-block ph-skel-main"></div><div class="ph-skel-thumbs"><div class="ph-skel-block"></div><div class="ph-skel-block"></div><div class="ph-skel-block"></div></div></div>
+    <div class="ph-skeleton__info"><div class="ph-skel-block ph-skel-cat"></div><div class="ph-skel-block ph-skel-title"></div><div class="ph-skel-block ph-skel-price"></div><div class="ph-skel-block ph-skel-btn"></div></div>
+</div>
+
+<!-- ===== HERO 50/50 ===== -->
+<section class="ph-hero" id="ph-hero" style="display:none">
+
+    <!-- GALERÍA (izquierda) -->
+    <div class="ph-gallery">
+        <div class="ph-gallery__zoom-wrap" id="ph-zoom-wrap">
+            <img id="ph-img-main" src="" alt="" loading="eager">
+            <div class="ph-gallery__lens" id="ph-lens" aria-hidden="true"></div>
+            <button class="ph-gallery__fullscreen" id="ph-fullscreen-btn" aria-label="Ver en pantalla completa">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+            </button>
+        </div>
+        <div class="ph-gallery__thumbs" id="ph-thumbs"></div>
     </div>
 
-    <!-- DETALLE -->
-    <div class="prod-detail" id="prod-detail">
+    <!-- INFO (derecha) -->
+    <div class="ph-info" id="ph-info">
+        <div class="ph-info__badges" id="ph-badges"></div>
+        <div class="ph-info__cat eyebrow" id="ph-cat"></div>
+        <h1 class="ph-info__name" id="ph-name"></h1>
 
-        <!-- GALERÍA -->
-        <div class="prod-gallery" id="prod-gallery">
-            <div class="prod-gallery__main" id="gallery-main">
-                <img id="gallery-img" src="" alt="">
-            </div>
-            <div class="prod-gallery__thumbs" id="gallery-thumbs"></div>
+        <!-- Social proof -->
+        <div class="ph-social-proof">
+            <span class="ph-viewing">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span id="ph-viewing-n">9</span> personas viendo ahora
+            </span>
+            <span class="ph-recent">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                Comprado hace <span id="ph-recent-t">3</span> horas
+            </span>
         </div>
 
-        <!-- INFO -->
-        <div class="prod-info" id="prod-info">
+        <!-- Precio -->
+        <div class="ph-info__price" id="ph-price"></div>
 
-            <div class="prod-info__badges" id="info-badges"></div>
+        <!-- Stock -->
+        <div class="ph-stock" id="ph-stock">
+            <div class="ph-stock__bar"><div class="ph-stock__fill" id="ph-stock-fill" style="width:72%"></div></div>
+            <span class="ph-stock__label" id="ph-stock-label">Disponible</span>
+        </div>
 
-            <h1 class="prod-info__name" id="info-name"></h1>
+        <!-- Confianza -->
+        <ul class="ph-trust">
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="4,10 8,14 16,6"/></svg>Envíos a todo el país</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="4,10 8,14 16,6"/></svg>Pago seguro</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="4,10 8,14 16,6"/></svg>Garantía de satisfacción</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="4,10 8,14 16,6"/></svg>Pieza cuidadosamente seleccionada</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="4,10 8,14 16,6"/></svg>Atención personalizada</li>
+        </ul>
 
-            <div class="prod-info__price" id="info-price"></div>
+        <!-- Acciones principales -->
+        <div class="ph-actions">
+            <button class="ph-btn ph-btn--cart" id="ph-btn-cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                Agregar al carrito
+            </button>
+            <button class="ph-btn ph-btn--buy" id="ph-btn-buy">Comprar ahora</button>
+            <a class="ph-btn ph-btn--wa" id="ph-btn-wa" href="#" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.737-.979z"/></svg>
+                Consultar por WhatsApp
+            </a>
+        </div>
 
-            <p class="prod-info__desc" id="info-desc"></p>
-
-            <div class="prod-actions">
-                <button class="prod-btn prod-btn--cart" id="btn-cart">Agregar al carrito</button>
-                <a class="prod-btn prod-btn--wa" id="btn-wa" href="#" target="_blank">Consultar por WhatsApp</a>
-                <button class="prod-btn prod-btn--wish" id="btn-wish" aria-label="Guardar">♡</button>
-            </div>
-
-            <!-- CARACTERÍSTICAS -->
-            <div class="prod-block" id="block-features" style="display:none;">
-                <h4>Características</h4>
-                <ul class="prod-features__list" id="features-list"></ul>
-            </div>
-
-            <!-- BENEFICIOS -->
-            <div class="prod-block" id="block-benefits" style="display:none;">
-                <h4>Beneficios</h4>
-                <div class="prod-benefits__grid" id="benefits-grid"></div>
-            </div>
-
-            <!-- INFORMACIÓN ENERGÉTICA -->
-            <div class="prod-energy" id="block-energy" style="display:none;">
-                <div class="prod-energy__name" id="energy-name"></div>
-                <div class="prod-energy__grid" id="energy-grid"></div>
-            </div>
-
-            <!-- FAQ -->
-            <div class="prod-block" id="block-faq" style="display:none;">
-                <h4>Preguntas frecuentes</h4>
-                <div id="faq-list"></div>
-            </div>
-
+        <!-- Acciones secundarias -->
+        <div class="ph-secondary-actions">
+            <button class="ph-icon-btn" id="ph-wish-btn" aria-label="Guardar en lista de deseos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span id="ph-wish-label">Guardar</span>
+            </button>
+            <button class="ph-icon-btn" id="ph-share-btn" aria-label="Compartir">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                Compartir
+            </button>
         </div>
     </div>
+</section>
 
-    <!-- RELACIONADOS -->
-    <section class="related-section" id="related-section" style="display:none;">
-        <p class="related-section__title">También te puede interesar</p>
-        <div class="related-grid" id="related-grid"></div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <p class="footer-quote">«La armonía comienza en los espacios que habitamos.»</p>
-        <div class="footer-grid">
-            <div class="footer-col"><span class="brand-foot">ARMONÍA ZEN</span><p style="color:var(--ivory-soft); margin-top:18px; max-width:260px; font-size:0.92rem;">Decoración consciente para espacios que transmiten calma. Buenos Aires, Argentina.</p></div>
-            <div class="footer-col"><h4>Colecciones</h4><a href="catalogo.html">Tienda</a><a href="piedras.html">Piedras</a><a href="plantas.html">Plantas</a></div>
-            <div class="footer-col"><h4>Casa</h4><a href="nosotros.html">Filosofía</a><a href="blog.html">Journal</a><a href="contacto.html">Contacto</a></div>
-            <div class="footer-col"><h4>Seguinos</h4><a href="#" target="_blank">Instagram</a><a href="https://wa.me/5491234567890" target="_blank">WhatsApp</a><a href="#" target="_blank">Pinterest</a></div>
+<!-- ===== STICKY BAR ===== -->
+<div class="ph-sticky" id="ph-sticky">
+    <div class="ph-sticky__inner">
+        <img id="ph-sticky-img" src="" alt="" class="ph-sticky__thumb">
+        <div>
+            <div class="ph-sticky__name" id="ph-sticky-name"></div>
+            <div class="ph-sticky__price" id="ph-sticky-price"></div>
         </div>
-        <div class="footer-bottom"><span>© 2026 Armonía Zen. Todos los derechos reservados.</span><span>Hecho con intención en Buenos Aires.</span></div>
-    </footer>
+        <div class="ph-sticky__actions">
+            <button class="ph-btn ph-btn--cart ph-btn--sm" id="ph-sticky-cart">Agregar al carrito</button>
+            <a class="ph-btn ph-btn--wa ph-btn--sm" id="ph-sticky-wa" href="#" target="_blank">WhatsApp</a>
+        </div>
+    </div>
+</div>
 
-    <aside class="cart-panel" id="cart-panel">
-        <div class="cart-panel__head"><h3>Carrito</h3><button class="cart-close" id="cart-close">&times;</button></div>
-        <div class="cart-items" id="cart-items"></div>
-        <div class="cart-panel__foot"><div class="cart-total"><span>Subtotal</span><span id="cart-subtotal">$0</span></div><button class="btn btn--solid" onclick="checkoutWhatsApp()">Finalizar por WhatsApp</button></div>
-    </aside>
-    <div class="cart-overlay" id="cart-overlay"></div>
+<!-- ===== STORYTELLING ===== -->
+<section class="ph-story reveal" id="ph-story">
+    <div class="ph-story__img-col">
+        <div class="ph-story__img-wrap">
+            <img id="ph-story-img" src="" alt="" loading="lazy">
+        </div>
+    </div>
+    <div class="ph-story__text-col">
+        <span class="eyebrow">Una pieza para transformar tu espacio</span>
+        <div class="ph-story__body" id="ph-story-body"></div>
+    </div>
+</section>
 
-    <a href="https://wa.me/5491234567890" target="_blank" class="wa-float" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.737-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
-    </a>
-    <div class="toast" id="toast"></div>
+<!-- ===== BENEFICIOS ===== -->
+<section class="ph-benefits-sec reveal" id="ph-benefits-sec" style="display:none">
+    <div class="ph-sec-head ph-sec-head--center">
+        <span class="eyebrow">Lo que aporta</span>
+        <h2 class="display">Beneficios</h2>
+        <div class="ph-gold-rule"></div>
+    </div>
+    <div class="ph-benefits-grid" id="ph-benefits-grid"></div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/supabase-store.js"></script>
-    <script src="js/armonia.js"></script>
-    <script src="js/catalogo-armonia.js"></script>
-    <script src="js/site-content.js"></script>
-    <script src="js/producto-armonia.js"></script>
+<!-- ===== ENERGÍA ===== -->
+<div class="ph-energy-strip" id="ph-energy-strip" style="display:none">
+    <div class="ph-energy-strip__inner">
+        <span class="eyebrow" id="ph-energy-name"></span>
+        <div class="ph-energy-strip__grid" id="ph-energy-grid"></div>
+    </div>
+</div>
+
+<!-- ===== FICHA TÉCNICA ===== -->
+<section class="ph-specs-sec reveal" id="ph-specs-sec" style="display:none">
+    <div class="ph-specs-sec__inner">
+        <div class="ph-sec-head">
+            <span class="eyebrow">Ficha técnica</span>
+            <h2 class="display">Información completa</h2>
+        </div>
+        <dl class="ph-specs-list" id="ph-specs-list"></dl>
+    </div>
+</section>
+
+<!-- ===== ESPACIOS ===== -->
+<section class="ph-spaces-sec reveal" id="ph-spaces-sec">
+    <div class="ph-sec-head ph-sec-head--center">
+        <span class="eyebrow">Inspiración</span>
+        <h2 class="display">Cómo integrarlo en tu espacio</h2>
+    </div>
+    <div class="ph-spaces-grid" id="ph-spaces-grid">
+        <div class="ph-space-card" data-space="dormitorio" style="background-image:url('https://images.unsplash.com/photo-1650208532541-572697b3dd40?w=600&q=75&auto=format&fit=crop')"><div class="ph-space-card__overlay"><span>Dormitorio</span></div></div>
+        <div class="ph-space-card" data-space="sala" style="background-image:url('https://images.unsplash.com/photo-1619166855707-bba87a7772a2?w=600&q=75&auto=format&fit=crop')"><div class="ph-space-card__overlay"><span>Sala de estar</span></div></div>
+        <div class="ph-space-card" data-space="oficina" style="background-image:url('https://images.unsplash.com/photo-1597336465111-a392afd218bc?w=600&q=75&auto=format&fit=crop')"><div class="ph-space-card__overlay"><span>Oficina</span></div></div>
+        <div class="ph-space-card" data-space="meditacion" style="background-image:url('https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?w=600&q=75&auto=format&fit=crop')"><div class="ph-space-card__overlay"><span>Espacio de meditación</span></div></div>
+        <div class="ph-space-card" data-space="consultorio" style="background-image:url('https://images.unsplash.com/photo-1639390167093-9c62311fe84d?w=600&q=75&auto=format&fit=crop')"><div class="ph-space-card__overlay"><span>Consultorio</span></div></div>
+        <div class="ph-space-card" data-space="jardin" style="background-image:url('https://images.unsplash.com/photo-1764422097784-0eaa2340d0e1?w=600&q=75&auto=format&fit=crop')"><div class="ph-space-card__overlay"><span>Jardín zen</span></div></div>
+    </div>
+</section>
+
+<!-- ===== RITUAL ===== -->
+<section class="ph-ritual-sec reveal" id="ph-ritual-sec" style="display:none">
+    <div class="ph-ritual-sec__inner">
+        <div class="ph-sec-head">
+            <span class="eyebrow">Ritual sugerido</span>
+            <h2 class="display">Cómo usarlo</h2>
+        </div>
+        <ol class="ph-ritual-steps" id="ph-ritual-steps"></ol>
+    </div>
+</section>
+
+<!-- ===== GALERÍA MASONRY ===== -->
+<section class="ph-masonry-sec" id="ph-masonry-sec">
+    <div class="ph-masonry" id="ph-masonry"></div>
+</section>
+
+<!-- ===== TESTIMONIOS ===== -->
+<section class="ph-testimonials reveal" id="ph-testimonials-sec">
+    <div class="ph-sec-head ph-sec-head--center">
+        <span class="eyebrow">Lo que dicen</span>
+        <h2 class="display">Testimonios</h2>
+        <div class="ph-gold-rule"></div>
+    </div>
+    <div class="ph-testimonials__wrap">
+        <div class="ph-testimonials__track" id="ph-testimonials-track">
+            <div class="ph-testimonial">
+                <div class="ph-testimonial__stars">★★★★★</div>
+                <p class="ph-testimonial__text">"Superó completamente mis expectativas. La calidad es increíble y la energía que transmite en mi espacio es exactamente lo que buscaba."</p>
+                <div class="ph-testimonial__author"><div class="ph-testimonial__avatar">M</div><div><strong>Martina G.</strong><span>Buenos Aires</span></div></div>
+            </div>
+            <div class="ph-testimonial">
+                <div class="ph-testimonial__stars">★★★★★</div>
+                <p class="ph-testimonial__text">"Una pieza verdaderamente especial. Llegó perfectamente embalada y es aún más linda en persona. Ya compré otra para regalar."</p>
+                <div class="ph-testimonial__author"><div class="ph-testimonial__avatar">V</div><div><strong>Valentina R.</strong><span>Rosario</span></div></div>
+            </div>
+            <div class="ph-testimonial">
+                <div class="ph-testimonial__stars">★★★★★</div>
+                <p class="ph-testimonial__text">"Desde que la tengo en casa siento el espacio diferente. El equipo de Armonía Zen es muy atento y el envío fue rapidísimo."</p>
+                <div class="ph-testimonial__author"><div class="ph-testimonial__avatar">S</div><div><strong>Sofía M.</strong><span>Córdoba</span></div></div>
+            </div>
+        </div>
+        <div class="ph-testimonials__dots" id="ph-testimonials-dots">
+            <button class="ph-dot active" data-idx="0"></button>
+            <button class="ph-dot" data-idx="1"></button>
+            <button class="ph-dot" data-idx="2"></button>
+        </div>
+        <button class="ph-testimonials__arrow ph-testimonials__arrow--prev" id="ph-tprev" aria-label="Anterior">‹</button>
+        <button class="ph-testimonials__arrow ph-testimonials__arrow--next" id="ph-tnext" aria-label="Siguiente">›</button>
+    </div>
+</section>
+
+<!-- ===== RELACIONADOS ===== -->
+<section class="ph-related-sec reveal" id="ph-related-sec" style="display:none">
+    <div class="ph-sec-head ph-sec-head--center">
+        <span class="eyebrow">También te puede interesar</span>
+        <h2 class="display">Piezas complementarias</h2>
+    </div>
+    <div class="ph-related-scroll" id="ph-related-track"></div>
+</section>
+
+<!-- ===== EDUCATIVO ===== -->
+<section class="ph-edu-sec reveal" id="ph-edu-sec" style="display:none">
+    <div class="ph-edu-sec__inner">
+        <div class="ph-sec-head">
+            <span class="eyebrow">Conocé más</span>
+            <h2 class="display" id="ph-edu-title">Sobre esta pieza</h2>
+        </div>
+        <div class="ph-edu-content" id="ph-edu-content"></div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="ph-faq-sec reveal" id="ph-faq-sec" style="display:none">
+    <div class="ph-faq-sec__inner">
+        <div class="ph-sec-head">
+            <span class="eyebrow">Preguntas frecuentes</span>
+            <h2 class="display">FAQ</h2>
+        </div>
+        <div id="ph-faq-list"></div>
+
+        <!-- FAQ fijas siempre presentes -->
+        <div class="ph-faq-item">
+            <button class="ph-faq-q">¿Cómo se realiza el envío?</button>
+            <div class="ph-faq-a">Enviamos a todo el país a través de correo privado o Correo Argentino. El plazo estimado es de 3 a 7 días hábiles según tu zona. Recibirás un número de seguimiento.</div>
+        </div>
+        <div class="ph-faq-item">
+            <button class="ph-faq-q">¿Puedo regalarlo?</button>
+            <div class="ph-faq-a">Por supuesto. Todos nuestros pedidos incluyen embalaje cuidado. Podés solicitar una nota personalizada sin cargo al momento de la compra.</div>
+        </div>
+        <div class="ph-faq-item">
+            <button class="ph-faq-q">¿Tiene garantía?</button>
+            <div class="ph-faq-a">Sí. Garantizamos la autenticidad de todos nuestros productos. Si llegara con algún daño del transporte, lo reponemos sin costo.</div>
+        </div>
+        <div class="ph-faq-item">
+            <button class="ph-faq-q">¿Cómo debo cuidarlo?</button>
+            <div class="ph-faq-a">Cada pieza viene con instrucciones de cuidado. En general recomendamos limpiar con paño suave y seco, evitar humedad directa en piezas de piedra natural, y no exponer a luz solar intensa durante períodos prolongados.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="ph-cta-final" id="ph-cta-final">
+    <div class="ph-cta-final__bg" id="ph-cta-bg"></div>
+    <div class="ph-cta-final__overlay"></div>
+    <div class="ph-cta-final__inner">
+        <span class="eyebrow">Hacé tuyo este espacio</span>
+        <h2 class="display ph-cta-final__title" id="ph-cta-name">Creá un espacio que invite a la calma.</h2>
+        <p class="ph-cta-final__text">Cada pieza que elegís transforma el ambiente donde vivís. Que sea una elección consciente.</p>
+        <button class="ph-btn ph-btn--cart ph-btn--lg" id="ph-final-btn">Agregar al carrito</button>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <p class="footer-quote">«La armonía comienza en los espacios que habitamos.»</p>
+    <div class="footer-grid">
+        <div class="footer-col"><span class="brand-foot">ARMONÍA ZEN</span><p style="color:var(--ivory-soft);margin-top:18px;max-width:260px;font-size:0.92rem;">Decoración consciente para espacios que transmiten calma. Buenos Aires, Argentina.</p></div>
+        <div class="footer-col"><h4>Colecciones</h4><a href="catalogo.html">Tienda</a><a href="piedras.html">Piedras</a><a href="plantas.html">Plantas</a></div>
+        <div class="footer-col"><h4>Casa</h4><a href="nosotros.html">Filosofía</a><a href="blog.html">Journal</a><a href="contacto.html">Contacto</a></div>
+        <div class="footer-col"><h4>Seguinos</h4><a href="#" target="_blank">Instagram</a><a href="https://wa.me/5491234567890" target="_blank">WhatsApp</a><a href="#" target="_blank">Pinterest</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Armonía Zen. Todos los derechos reservados.</span><span>Hecho con intención en Buenos Aires.</span></div>
+</footer>
+
+<!-- ===== CARRITO ===== -->
+<aside class="cart-panel" id="cart-panel">
+    <div class="cart-panel__head"><h3>Carrito</h3><button class="cart-close" id="cart-close">&times;</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-panel__foot"><div class="cart-total"><span>Subtotal</span><span id="cart-subtotal">$0</span></div><button class="btn btn--solid" onclick="checkoutWhatsApp()">Finalizar por WhatsApp</button></div>
+</aside>
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="ph-lightbox" id="ph-lightbox" role="dialog" aria-modal="true" aria-label="Galería de imágenes">
+    <button class="ph-lightbox__close" id="ph-lb-close" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="ph-lightbox__nav ph-lightbox__prev" id="ph-lb-prev" aria-label="Anterior">‹</button>
+    <div class="ph-lightbox__stage">
+        <img id="ph-lb-img" src="" alt="">
+    </div>
+    <button class="ph-lightbox__nav ph-lightbox__next" id="ph-lb-next" aria-label="Siguiente">›</button>
+    <div class="ph-lightbox__counter" id="ph-lb-counter">1 / 3</div>
+</div>
+
+<!-- ===== SHARE PANEL ===== -->
+<div class="ph-share-panel" id="ph-share-panel">
+    <div class="ph-share-panel__box">
+        <div class="ph-share-panel__title">Compartir producto</div>
+        <div class="ph-share-panel__links" id="ph-share-links"></div>
+        <button class="ph-share-panel__close" id="ph-share-close" aria-label="Cerrar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</div>
+
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/5491234567890" target="_blank" class="wa-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.737-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-store.js"></script>
+<script src="js/armonia.js"></script>
+<script src="js/catalogo-armonia.js"></script>
+<script src="js/site-content.js"></script>
+<script src="js/supabase-producto.js"></script>
+<script src="js/producto-armonia.js"></script>
 </body>
 </html>
