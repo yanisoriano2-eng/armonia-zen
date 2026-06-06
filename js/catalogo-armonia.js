@@ -1185,7 +1185,8 @@
                 badgeHtml(p.badges) +
                 '<button class="pcard__wish' + (wish ? ' liked' : '') + '" data-wish="' + p.id + '" aria-label="Guardar">♡</button>' +
                 '<div class="pcard__overlay">' +
-                    '<button class="pcard__wa-quick" data-wa="' + p.id + '">Consultar por WhatsApp</button>' +
+                    '<button class="pcard__qv-quick" data-qv="' + p.id + '">Vista Rápida</button>' +
+                    '<button class="pcard__cart-quick" data-cart="' + p.id + '">Agregar al Carrito</button>' +
                 '</div>' +
             '</div>' +
             '<div class="pcard__body">' +
@@ -1280,6 +1281,20 @@
                 if (p) window.open(waMsg(p), '_blank');
             });
         });
+        grid.querySelectorAll('[data-cart]').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                var p = PRODUCTS.filter(function(x){ return x.id === btn.getAttribute('data-cart'); })[0];
+                if (p && window.addToCart) addToCart(p.name, p.price);
+            });
+        });
+        grid.querySelectorAll('[data-qv]').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                var p = PRODUCTS.filter(function(x){ return x.id === btn.getAttribute('data-qv'); })[0];
+                if (p) openQuickView(p);
+            });
+        });
     }
 
     /* Subcategorías */
@@ -1335,6 +1350,47 @@
         }).join('');
         recentSec.style.display = '';
     }
+
+    /* ------------------------------------------------------------------ */
+    /* QUICK VIEW MODAL                                                   */
+    /* ------------------------------------------------------------------ */
+    var qvModal;
+    function openQuickView(p) {
+        if (!qvModal) {
+            qvModal = document.createElement('div');
+            qvModal.className = 'qv-modal';
+            document.body.appendChild(qvModal);
+        }
+        var img = buildImg(p);
+        qvModal.innerHTML = 
+            '<div class="qv-modal__bg" onclick="closeQuickView()"></div>' +
+            '<div class="qv-modal__content">' +
+                '<button class="qv-modal__close" onclick="closeQuickView()">×</button>' +
+                '<div class="qv-modal__img">' +
+                    '<img src="' + img + '" alt="' + p.name + '">' +
+                '</div>' +
+                '<div class="qv-modal__info">' +
+                    '<h3 class="pcard__name" style="font-size:2rem;margin-bottom:15px;">' + p.name + '</h3>' +
+                    priceHtml(p, 'pcard__price') +
+                    '<p style="color:var(--sage-faint);line-height:1.7;margin:20px 0;">' + p.descShort + '</p>' +
+                    '<div style="display:flex;gap:10px;margin-top:auto;">' +
+                        '<button class="btn btn--outline" onclick="window.addToCart && addToCart(\'' + p.name.replace(/'/g, "\\'") + '\', ' + p.price + ')" style="flex:1;justify-content:center;">Agregar</button>' +
+                        '<a href="producto.html?id=' + p.id + '" class="btn btn--solid" style="flex:1;justify-content:center;">Ver Detalles</a>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+        
+        // Trigger reflow
+        void qvModal.offsetWidth;
+        qvModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    window.closeQuickView = function() {
+        if (qvModal) {
+            qvModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    };
 
     render();
     renderRecent();

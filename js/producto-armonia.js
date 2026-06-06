@@ -66,9 +66,28 @@
         var bcName = $('bc-name');
         if (bcName) bcName.textContent = p.name;
 
-        /* Galería */
+        /* Galería con Zoom */
+        var gMain = $('gallery-main');
         var gImg = $('gallery-img');
-        if (gImg) { gImg.src = imgUrl(p); gImg.alt = p.name; }
+        if (gImg) { 
+            gImg.src = imgUrl(p); gImg.alt = p.name; 
+        }
+        if (gMain && gImg) {
+            gMain.classList.add('prod-gallery__main-wrap');
+            gMain.addEventListener('mousemove', function(e) {
+                var rect = gMain.getBoundingClientRect();
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+                var xPercent = Math.round(100 / rect.width * x);
+                var yPercent = Math.round(100 / rect.height * y);
+                gImg.style.transformOrigin = xPercent + '% ' + yPercent + '%';
+                gImg.classList.add('zoomed');
+            });
+            gMain.addEventListener('mouseleave', function() {
+                gImg.classList.remove('zoomed');
+                gImg.style.transformOrigin = 'center center';
+            });
+        }
 
         /* Thumbnails — usamos la misma imagen 3 veces (sin fotos múltiples reales) */
         var thumbs = $('gallery-thumbs');
@@ -236,6 +255,41 @@
         /* Scroll reveal */
         document.querySelectorAll('.reveal').forEach(function(el) {
             el.classList.add('in');
+        });
+
+        /* Sticky Action Bar */
+        var stickyBar = document.createElement('div');
+        stickyBar.className = 'sticky-action-bar';
+        stickyBar.innerHTML = 
+            '<div class="sticky-action-bar__info">' +
+                '<img src="' + imgUrl(p, 'sm') + '" alt="" class="sticky-action-bar__img">' +
+                '<div>' +
+                    '<div class="sticky-action-bar__name">' + p.name + '</div>' +
+                    '<div class="sticky-action-bar__price">' + money(p.price) + '</div>' +
+                '</div>' +
+            '</div>' +
+            '<div class="sticky-action-bar__actions">' +
+                '<button class="btn btn--outline" id="sticky-btn-cart">Agregar</button>' +
+                '<a href="' + (btnWa ? btnWa.href : '#') + '" target="_blank" class="btn btn--solid">WhatsApp</a>' +
+            '</div>';
+        document.body.appendChild(stickyBar);
+
+        var stickyBtnCart = $('sticky-btn-cart');
+        if (stickyBtnCart) {
+            stickyBtnCart.addEventListener('click', function() {
+                if (window.addToCart) addToCart(p.name, p.price);
+            });
+        }
+
+        var btnWaEl = $('btn-wa');
+        window.addEventListener('scroll', function() {
+            if (!btnWaEl) return;
+            var rect = btnWaEl.getBoundingClientRect();
+            if (rect.top < 0) {
+                stickyBar.classList.add('visible');
+            } else {
+                stickyBar.classList.remove('visible');
+            }
         });
     }
 
