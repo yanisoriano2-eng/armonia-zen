@@ -111,7 +111,7 @@
 
         /* Descripción */
         var descEl2 = $('info-desc');
-        if (descEl2) descEl2.textContent = p.descLong || p.descShort;
+        if (descEl2) descEl2.innerHTML = p.descLong || p.descShort;
 
         /* Botón carrito */
         var btnCart = $('btn-cart');

@@ -1728,6 +1728,15 @@ img { display: block; max-width: 100%; }
     color: var(--sage-faint);
     margin-bottom: 32px;
 }
+.prod-info__desc p {
+    margin-bottom: 1.3em;
+}
+.prod-info__desc p:last-child {
+    margin-bottom: 0;
+}
+.prod-info__desc em {
+    font-style: italic;
+}
 
 /* Botones acción */
 .prod-actions { display: flex; gap: 12px; margin-bottom: 36px; flex-wrap: wrap; }
