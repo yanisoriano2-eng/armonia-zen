@@ -1223,6 +1223,10 @@
         });
     }
 
+    /* Siempre disponible para producto.html y cualquier otra página */
+    window.__azRecent   = addRecent;
+    window.__azProducts = PRODUCTS;
+
     /* ------------------------------------------------------------------ */
     /* CATÁLOGO — inicialización                                           */
     /* ------------------------------------------------------------------ */
@@ -1236,10 +1240,6 @@
     var sortEl   = document.getElementById('cat-sort');
     var recentSec= document.getElementById('recently-section');
     var recentGrd= document.getElementById('recently-grid');
-
-    /* Global para producto.html */
-    window.__azRecent = addRecent;
-    window.__azProducts = PRODUCTS;
 
     function render() {
         var list = filtered();
