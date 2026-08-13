@@ -227,6 +227,12 @@ img { display: block; max-width: 100%; }
 
 .site-header.scrolled .brand { font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 2vw, 32px);
+}
+
 .nav {
     display: flex;
     gap: clamp(22px, 2.4vw, 44px);
@@ -656,6 +662,48 @@ img { display: block; max-width: 100%; }
     color: var(--beige);
 }
 
+/* Ofertas del mes ------------------------------------------------------------ */
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 2.5vw, 32px);
+    max-width: 1480px;
+    margin: 0 auto;
+}
+.offer-card { position: relative; display: flex; flex-direction: column; }
+.offer-card__media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    margin-bottom: 16px;
+    background: var(--moss);
+}
+.offer-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.offer-card:hover .offer-card__media img { transform: scale(1.06); }
+.offer-card__ribbon {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--gold); color: var(--forest);
+    font-family: var(--sans); font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 10px; border-radius: 2px;
+}
+.offer-card__cat { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; display: block; }
+.offer-card__name { font-family: var(--display); font-size: 1.25rem; color: var(--ivory); margin-bottom: 8px; line-height: 1.2; }
+.offer-card__price { display: flex; align-items: baseline; gap: 9px; margin-bottom: 16px; }
+.offer-card__price-orig { font-size: 0.85rem; color: var(--ivory-faint); text-decoration: line-through; }
+.offer-card__price-now { font-family: var(--serif); font-size: 1.25rem; color: var(--gold); }
+.offer-card__add {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; background: rgba(255,255,255,0.06); border: 1px solid var(--gold-line);
+    color: var(--ivory); font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 13px; cursor: pointer; margin-top: auto;
+    transition: background 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+.offer-card__add:hover { background: var(--gold); color: var(--forest); border-color: var(--gold); }
+@media (max-width: 1024px) { .offer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .offer-grid { grid-template-columns: 1fr; } }
+
 /* Rituales — revista -------------------------------------------------------- */
 
 .rituals {
@@ -892,20 +940,37 @@ img { display: block; max-width: 100%; }
 .cart-overlay.open { opacity: 1; visibility: visible; }
 
 .cart-trigger {
+    display: flex;
+    align-items: center;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--ivory);
-    font-family: var(--sans);
-    font-size: 0.74rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    font-size: 1.3rem;
+    line-height: 1;
     position: relative;
+    z-index: 110;
+    transition: transform 0.35s var(--ease);
 }
-.cart-trigger sup {
-    color: var(--gold);
-    font-size: 0.7rem;
-    margin-left: 2px;
+.cart-trigger:hover { transform: translateY(-2px); }
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -11px;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--forest);
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 /* WhatsApp flotante --------------------------------------------------------- */
@@ -933,17 +998,24 @@ img { display: block; max-width: 100%; }
 .toast {
     position: fixed;
     bottom: 40px; left: 50%;
-    transform: translateX(-50%) translateY(120%);
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+    visibility: hidden;
     background: var(--ivory);
     color: var(--forest);
     padding: 16px 32px;
     z-index: 300;
     font-size: 0.85rem;
     letter-spacing: 0.05em;
-    transition: transform 0.6s var(--ease);
+    transition: transform 0.6s var(--ease), opacity 0.6s var(--ease), visibility 0s linear 0.6s;
     box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
-.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.6s var(--ease), opacity 0.6s var(--ease), visibility 0s linear 0s;
+}
 
 /* ==========================================================================
    SCROLL REVEAL
@@ -1494,7 +1566,7 @@ img { display: block; max-width: 100%; }
 }
 .pcard:hover .pcard__overlay { opacity: 1; }
 
-.pcard__wa-quick, .pcard__qv-quick {
+.pcard__wa-quick, .pcard__qv-quick, .pcard__cart-quick {
     width: 100%;
     background: rgba(255,255,255,0.96);
     color: var(--sage-dark);
@@ -1510,6 +1582,8 @@ img { display: block; max-width: 100%; }
 .pcard__wa-quick:hover { background: #25D366; color: #fff; }
 .pcard__qv-quick { background: rgba(47, 59, 50, 0.96); color: #fff; }
 .pcard__qv-quick:hover { background: var(--warm-gold); color: var(--sage-dark); }
+.pcard__cart-quick { background: var(--gold); color: var(--sage-dark); }
+.pcard__cart-quick:hover { background: var(--warm-gold); }
 
 /* Cuerpo de la tarjeta */
 .pcard__body {
@@ -1566,6 +1640,11 @@ img { display: block; max-width: 100%; }
     margin-right: 6px;
 }
 .pcard__price-sale { color: #7a3e1e; }
+.pcard__foot-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
 .pcard__link {
     font-family: var(--sans);
     font-size: 0.62rem;
@@ -1587,6 +1666,24 @@ img { display: block; max-width: 100%; }
     transition: transform 0.4s var(--ease);
 }
 .pcard__link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Botón de agregar al carrito, siempre visible (no depende del hover) */
+.pcard__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--sage-line);
+    background: #fff;
+    color: var(--sage-dark);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.pcard__add:hover { background: var(--sage-dark); color: #fff; border-color: var(--sage-dark); transform: scale(1.08); }
 
 /* Estado vacío */
 .catalog-empty {
@@ -2129,18 +2226,23 @@ img { display: block; max-width: 100%; }
 
 /* ----- Badges ----- */
 .ph-info__badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-.pbadge {
+.prod-body .pbadge {
     font-size: 0.6rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     padding: 5px 12px;
     border: 1px solid;
 }
-.pbadge--artesanal { border-color: var(--gold-line); color: var(--gold); }
-.pbadge--natural   { border-color: rgba(126,146,120,.4); color: #7E9278; }
-.pbadge--especial  { background: var(--gold); color: var(--forest); border-color: var(--gold); }
-.pbadge--importado { border-color: var(--ivory-faint); color: var(--ivory-soft); }
-.pbadge--popular   { background: var(--moss); border-color: var(--ivory-faint); color: var(--ivory); }
+.prod-body .pbadge--artesanal,
+.prod-body .pbadge--artisan   { border-color: var(--gold-line); color: var(--gold); }
+.prod-body .pbadge--natural   { border-color: rgba(126,146,120,.4); color: #7E9278; }
+.prod-body .pbadge--especial  { background: var(--gold); color: var(--forest); border-color: var(--gold); }
+.prod-body .pbadge--importado { border-color: var(--ivory-faint); color: var(--ivory-soft); }
+.prod-body .pbadge--popular   { background: var(--moss); border-color: var(--ivory-faint); color: var(--ivory); }
+.prod-body .pbadge--sale      { background: rgba(110, 75, 45, 0.9); color: #fff; border-color: rgba(255,255,255,0.15); }
+.prod-body .pbadge--hot       { background: rgba(47, 59, 50, 0.9); color: #fff; border-color: rgba(255,255,255,0.15); }
+.prod-body .pbadge--wellness  { background: rgba(232,221,208,0.95); color: var(--sage-dark); border-color: transparent; }
+.prod-body .pbadge--gift      { background: rgba(255,255,255,0.95); color: var(--sage-dark); border-color: transparent; }
 
 /* ----- HERO 50/50 ----- */
 .ph-hero {

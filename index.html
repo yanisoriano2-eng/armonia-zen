@@ -21,31 +21,33 @@
     <!-- HEADER -->
     <header class="site-header" id="header">
         <a href="index.html" class="brand">ARMONÍA ZEN</a>
-        <nav class="nav">
-            <a href="index.html">Inicio</a>
-            <a href="#esencia">Esencia</a>
-            <a href="#colecciones">Colecciones</a>
-            <a href="#espacios">Espacios</a>
-            <a href="catalogo.html">Tienda</a>
-            <a href="blog.html">Journal</a>
-            <a href="nosotros.html">Filosofía</a>
-            <button class="cart-trigger" id="cart-trigger">Carrito<sup id="cart-count">0</sup></button>
-            <a href="contacto.html" class="nav__cta">Contacto</a>
-        </nav>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
-            <span></span><span></span><span></span>
-        </button>
+        <div class="header-right">
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="catalogo.html">Tienda</a>
+                <a href="piedras.html">Piedras</a>
+                <a href="plantas.html">Plantas</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="preguntas-frecuentes.html">FAQ</a>
+                <a href="blog.html">Journal</a>
+                <a href="contacto.html" class="nav__cta">Contacto</a>
+            </nav>
+            <button class="cart-trigger" id="cart-trigger" aria-label="Ver carrito">🛒<span class="cart-badge" id="cart-count">0</span></button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
     <!-- MOBILE NAV -->
     <nav class="mobile-nav" id="mobile-nav">
         <a href="index.html">Inicio</a>
-        <a href="#esencia">Esencia</a>
-        <a href="#colecciones">Colecciones</a>
-        <a href="#espacios">Espacios</a>
         <a href="catalogo.html">Tienda</a>
+        <a href="piedras.html">Piedras</a>
+        <a href="plantas.html">Plantas</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
         <a href="blog.html">Journal</a>
-        <a href="nosotros.html">Filosofía</a>
         <a href="contacto.html">Contacto</a>
     </nav>
 
@@ -59,7 +61,7 @@
             <p class="hero__text">Creemos que cada objeto tiene el poder de transformar cómo se siente un espacio. Seleccionamos piezas inspiradas en la naturaleza, el bienestar y la armonía para crear hogares que invitan a detenerse, respirar y reconectar.</p>
             <div class="hero__actions">
                 <a href="catalogo.html" class="btn btn--solid">Explorar Colección</a>
-                <a href="#esencia" class="btn">Descubrir Nuestra Filosofía</a>
+                <a href="#ofertas" class="btn">Ver Ofertas del Mes</a>
             </div>
         </div>
         <div class="hero__scroll">
@@ -68,28 +70,72 @@
         </div>
     </section>
 
-    <!-- ESENCIA -->
-    <section class="section section--moss" id="esencia">
-        <div class="split">
-            <div class="split__media reveal">
-                <img src="https://images.unsplash.com/photo-1650208532541-572697b3dd40?w=1100&q=80&auto=format&fit=crop" alt="Interior zen con vegetación y luz cálida">
-                <div class="split__tag">
-                    <strong>2019</strong>
-                    <span>Desde Buenos Aires</span>
+    <!-- OFERTAS DEL MES -->
+    <section class="section section--moss" id="ofertas">
+        <div class="section-head reveal">
+            <span class="eyebrow">Oferta del mes</span>
+            <h2 class="display">Aprovechá antes de que se acaben.</h2>
+            <p class="lead" style="margin-top:18px;">Una selección especial con descuento por tiempo limitado. Piezas elegidas, precio de este mes.</p>
+        </div>
+        <div class="offer-grid">
+            <article class="offer-card reveal">
+                <a href="producto.html?id=anillo-obsidiana" class="offer-card__media">
+                    <img src="https://images.unsplash.com/photo-1609216970378-ce61cd74a187?w=700&q=80&auto=format&fit=crop" alt="Anillo de Obsidiana">
+                    <span class="offer-card__ribbon">-20%</span>
+                </a>
+                <span class="offer-card__cat">Joyería</span>
+                <h3 class="offer-card__name">Anillo de Obsidiana</h3>
+                <div class="offer-card__price">
+                    <span class="offer-card__price-orig">$10.000</span>
+                    <span class="offer-card__price-now">$8.000</span>
                 </div>
-            </div>
-            <div class="split__body reveal" data-delay="1">
-                <span class="eyebrow">Nuestra esencia</span>
-                <h2 class="display">El arte de crear espacios con intención.</h2>
-                <div class="text-block lead">
-                    <p>Armonía Zen nació de una certeza simple: el lugar donde vivimos moldea, en silencio, cómo nos sentimos. Una habitación puede tensar o puede sostener. Puede acelerar o puede invitar a la pausa. Quisimos crear una marca para quienes eligen lo segundo.</p>
-                    <p>Decorar conscientemente no es acumular objetos bonitos. Es elegir cada pieza por la energía que aporta — la calidez de una lámpara de sal al atardecer, el murmullo de una fuente, la presencia serena de una planta, el peso honesto de una piedra entre las manos.</p>
-                    <p>Trabajamos en la frontera entre el diseño y el bienestar: piezas seleccionadas por su belleza, sí, pero sobre todo por cómo transforman el estado de quien habita el espacio. Porque un hogar en armonía no se mira. Se respira.</p>
+                <button class="offer-card__add" onclick="addToCart('Anillo de Obsidiana', 8000)">Agregar al carrito</button>
+            </article>
+
+            <article class="offer-card reveal" data-delay="1">
+                <a href="producto.html?id=pulsera-7-chakras" class="offer-card__media">
+                    <img src="https://images.unsplash.com/photo-1609216970378-ce61cd74a187?w=700&q=80&auto=format&fit=crop" alt="Pulsera 7 Chakras">
+                    <span class="offer-card__ribbon">-20%</span>
+                </a>
+                <span class="offer-card__cat">Joyería</span>
+                <h3 class="offer-card__name">Pulsera 7 Chakras</h3>
+                <div class="offer-card__price">
+                    <span class="offer-card__price-orig">$12.000</span>
+                    <span class="offer-card__price-now">$9.500</span>
                 </div>
-                <div style="margin-top:36px;">
-                    <a href="nosotros.html" class="link-underline">Conocer nuestra filosofía</a>
+                <button class="offer-card__add" onclick="addToCart('Pulsera 7 Chakras', 9500)">Agregar al carrito</button>
+            </article>
+
+            <article class="offer-card reveal" data-delay="2">
+                <a href="producto.html?id=espada-san-jorge" class="offer-card__media">
+                    <img src="https://images.unsplash.com/photo-1764422097784-0eaa2340d0e1?w=700&q=80&auto=format&fit=crop" alt="Espada de San Jorge">
+                    <span class="offer-card__ribbon">-21%</span>
+                </a>
+                <span class="offer-card__cat">Plantas</span>
+                <h3 class="offer-card__name">Espada de San Jorge</h3>
+                <div class="offer-card__price">
+                    <span class="offer-card__price-orig">$7.000</span>
+                    <span class="offer-card__price-now">$5.500</span>
                 </div>
-            </div>
+                <button class="offer-card__add" onclick="addToCart('Espada de San Jorge', 5500)">Agregar al carrito</button>
+            </article>
+
+            <article class="offer-card reveal" data-delay="1">
+                <a href="producto.html?id=palo-santo" class="offer-card__media">
+                    <img src="https://images.unsplash.com/photo-1639390167093-9c62311fe84d?w=700&q=80&auto=format&fit=crop" alt="Palo Santo">
+                    <span class="offer-card__ribbon">-22%</span>
+                </a>
+                <span class="offer-card__cat">Aromaterapia</span>
+                <h3 class="offer-card__name">Palo Santo</h3>
+                <div class="offer-card__price">
+                    <span class="offer-card__price-orig">$4.500</span>
+                    <span class="offer-card__price-now">$3.500</span>
+                </div>
+                <button class="offer-card__add" onclick="addToCart('Palo Santo', 3500)">Agregar al carrito</button>
+            </article>
+        </div>
+        <div style="text-align:center; margin-top:clamp(50px,7vw,90px);" class="reveal">
+            <a href="catalogo.html" class="btn">Ver todo el catálogo</a>
         </div>
     </section>
 
@@ -142,32 +188,6 @@
                 <h3 class="band__title">Naturaleza</h3>
                 <p class="band__text">Plantas que respiran junto a nosotros. Más que decoración, son presencia viva: oxigenan, suavizan las líneas rectas y traen al interior el ritmo sereno de lo que crece sin prisa.</p>
                 <a href="plantas.html" class="link-underline">Ver la colección</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ESPACIOS ZEN — galería -->
-    <section class="section section--moss" id="espacios">
-        <div class="section-head reveal">
-            <span class="eyebrow">Espacios Armonía</span>
-            <h2 class="display">Ambientes pensados para habitar en calma.</h2>
-        </div>
-        <div class="spaces-grid">
-            <div class="space space--tall reveal">
-                <img src="https://images.unsplash.com/photo-1568990416308-c998af4cf9ee?w=900&q=80&auto=format&fit=crop" alt="Rincón de lectura">
-                <span class="space__label">Rincón de lectura · luz de la mañana</span>
-            </div>
-            <div class="space space--wide reveal" data-delay="1">
-                <img src="https://images.unsplash.com/photo-1600210491305-7396500b5b31?w=1400&q=80&auto=format&fit=crop" alt="Dormitorio sereno">
-                <span class="space__label">Dormitorio sereno</span>
-            </div>
-            <div class="space space--half reveal" data-delay="2">
-                <img src="https://images.unsplash.com/photo-1551215110-b4e2522d9b74?w=900&q=80&auto=format&fit=crop" alt="Living con vegetación">
-                <span class="space__label">Living con vegetación</span>
-            </div>
-            <div class="space space--full reveal">
-                <img src="https://images.unsplash.com/photo-1619166855707-bba87a7772a2?w=1800&q=80&auto=format&fit=crop" alt="Espacio de meditación">
-                <span class="space__label">Espacio de meditación</span>
             </div>
         </div>
     </section>
@@ -362,6 +382,7 @@
             <div class="footer-col">
                 <h4>Casa</h4>
                 <a href="nosotros.html">Filosofía</a>
+                <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
                 <a href="blog.html">Journal</a>
                 <a href="contacto.html">Contacto</a>
             </div>

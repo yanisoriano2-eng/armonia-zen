@@ -89,8 +89,8 @@
         },
         {
             id: 'anillo-obsidiana', name: 'Anillo de Obsidiana',
-            cat: 'joyeria', subcat: 'Anillos', price: 8000,
-            badges: [{ cls: 'natural', label: 'Piedra Natural' }, { cls: 'hot', label: 'Más Vendido' }],
+            cat: 'joyeria', subcat: 'Anillos', price: 8000, priceOrig: 10000,
+            badges: [{ cls: 'natural', label: 'Piedra Natural' }, { cls: 'hot', label: 'Más Vendido' }, { cls: 'sale', label: 'Oferta del Mes' }],
             img: 'crystal',
             descShort: 'Poderosa piedra protectora de origen volcánico. Absorbe energías densas y favorece el crecimiento personal.',
             descLong: '<p>La obsidiana no nació en las profundidades de la tierra de a poco, como la mayoría de los minerales. Nació en segundos, en el choque violento entre la lava y el frío. Esa energía de transformación radical está grabada en su naturaleza: es la piedra del antes y el después, del soltar y el crecer.</p><p>Los aztecas la usaban en sus cuchillos ceremoniales. Los mayas la pulían como espejo para ver "lo que el ojo común no puede ver". En casi todas las culturas antiguas de América y Asia, la obsidiana era sinónimo de poder y protección verdadera.</p><p>Hoy, quienes trabajan con energía la eligen como la piedra protectora por excelencia. Absorbe las energías densas del entorno, crea un campo de claridad a tu alrededor y actúa como espejo que muestra lo que ya es tiempo de soltar. No es una piedra cómoda — es una piedra transformadora.</p><p>En negro profundo y brillante, es también una pieza estéticamente poderosa. Una joya que no pasa desapercibida.</p>',
@@ -513,8 +513,8 @@
         },
         {
             id: 'pulsera-7-chakras', name: 'Pulsera 7 Chakras',
-            cat: 'joyeria', subcat: 'Pulseras', price: 9500,
-            badges: [{ cls: 'wellness', label: 'Bienestar' }, { cls: 'hot', label: 'Más Vendido' }],
+            cat: 'joyeria', subcat: 'Pulseras', price: 9500, priceOrig: 12000,
+            badges: [{ cls: 'wellness', label: 'Bienestar' }, { cls: 'hot', label: 'Más Vendido' }, { cls: 'sale', label: 'Oferta del Mes' }],
             img: 'crystal',
             descShort: 'Siete piedras naturales, una por chakra. Equilibrio energético completo en una sola pulsera.',
             descLong: '<p>Los siete chakras son los siete centros de energía del cuerpo según la tradición yóguica de la India. Cada uno corresponde a un plano de la existencia — físico, emocional, creativo, amoroso, comunicativo, intuitivo y espiritual. Cuando todos están en equilibrio, la vida fluye. Cuando alguno está bloqueado, algo no fluye.</p><p>Esta pulsera reúne siete piedras naturales — una por cada chakra — para invitar a ese equilibrio durante todo el día. Las piedras varían según disponibilidad pero siempre representan: granate o ágata roja (raíz), cornalina (sacro), citrino (plexo solar), aventurina o cuarzo rosa (corazón), aquamarina o sodalita (garganta), lapislázuli o amatista (tercer ojo), cuarzo cristal o amatista clara (corona).</p><p>Es la pulsera más completa de nuestra colección — un recordatorio diario de la integración y el equilibrio en todos los planos de la vida.</p>',
@@ -583,8 +583,8 @@
         },
         {
             id: 'espada-san-jorge', name: 'Espada de San Jorge',
-            cat: 'plantas', subcat: 'Interior', price: 5500,
-            badges: [{ cls: 'wellness', label: 'Protección' }, { cls: 'hot', label: 'Más Vendida' }],
+            cat: 'plantas', subcat: 'Interior', price: 5500, priceOrig: 7000,
+            badges: [{ cls: 'wellness', label: 'Protección' }, { cls: 'hot', label: 'Más Vendida' }, { cls: 'sale', label: 'Oferta del Mes' }],
             img: 'plant',
             descShort: 'La planta protectora por excelencia. Purifica el aire, requiere mínimo cuidado y protege el hogar.',
             descLong: '<p>La Sansevieria trifasciata — espada de San Jorge o lengua de suegra — es, sin exagerar, una de las plantas más extraordinarias del mundo. Puede sobrevivir semanas sin agua. Tolera la oscuridad casi total. Resiste las heladas leves. Es prácticamente indestructible. Y a cambio de todo ese estoicismo, purifica el aire de manera excepcional.</p><p>La NASA la incluyó en su estudio sobre plantas purificadoras como una de las más efectivas para filtrar formaldehído, benceno y tricloroetileno del aire interior. También tiene la particularidad única de producir oxígeno y absorber CO2 durante la noche — a la inversa del resto de las plantas. Ideal en dormitorios.</p><p>En el plano espiritual y de las tradiciones populares de Brasil, África y el Caribe, la espada de San Jorge es la planta protectora del hogar por excelencia. Se coloca en la entrada para absorber las energías negativas que intentan ingresar. Su forma de espada no es solo estética — es simbólica.</p>',
@@ -1053,8 +1053,8 @@
         },
         {
             id: 'palo-santo', name: 'Palo Santo',
-            cat: 'aromaterapia', subcat: 'Palo Santo', price: 3500,
-            badges: [{ cls: 'natural', label: 'Natural' }, { cls: 'hot', label: 'Más Vendido' }],
+            cat: 'aromaterapia', subcat: 'Palo Santo', price: 3500, priceOrig: 4500,
+            badges: [{ cls: 'natural', label: 'Natural' }, { cls: 'hot', label: 'Más Vendido' }, { cls: 'sale', label: 'Oferta del Mes' }],
             img: 'aroma',
             descShort: 'El árbol sagrado de Sudamérica. Limpieza, protección y elevación espiritual con un aroma único e inconfundible.',
             descLong: '<p>El Bursera graveolens — palo santo — es un árbol que crece en la costa del Pacífico de América del Sur. Su nombre en español lo dice todo: madera sagrada. Fue usado por los incas en rituales de purificación y por los chamanes andinos en ceremonias de curación. Hoy, su popularidad se ha extendido por todo el mundo — y con razón.</p><p>Lo que hace único al palo santo no es solo su aroma — aunque ese aroma es completamente particular, una mezcla de madera, cítrico y menta que no se parece a nada más. Lo que lo hace único es que solo los árboles que murieron de manera natural y reposaron en el suelo durante años desarrollan su resina aromática. No se puede fabricar artificialmente ni acelerar el proceso. Cada palo que llega a nuestras manos tiene décadas de historia.</p><p>Su humo limpia el espacio de energías densas, protege el campo energético y eleva la vibración. Es el ritual de limpieza más accesible y más poderoso que existe: un fósforo, una intención, un momento.</p>',
@@ -1195,7 +1195,10 @@
                 '<p class="pcard__desc">' + p.descShort + '</p>' +
                 '<div class="pcard__foot">' +
                     priceHtml(p) +
-                    '<a href="producto.html?id=' + p.id + '" class="pcard__link" onclick="window.__azRecent(\'' + p.id + '\')">Ver detalle</a>' +
+                    '<div class="pcard__foot-actions">' +
+                        '<a href="producto.html?id=' + p.id + '" class="pcard__link" onclick="window.__azRecent(\'' + p.id + '\')">Ver detalle</a>' +
+                        '<button class="pcard__add" data-cart="' + p.id + '" aria-label="Agregar ' + p.name + ' al carrito" title="Agregar al carrito">🛒</button>' +
+                    '</div>' +
                 '</div>' +
             '</div>' +
         '</article>';

@@ -38,7 +38,7 @@
             title: 'ARMONÍA ZEN', subtitle: 'Decoración consciente para espacios que transmiten calma.',
             text: 'Creemos que cada objeto tiene el poder de transformar cómo se siente un espacio.',
             btn1Text: 'Explorar Colección', btn1Link: 'catalogo.html',
-            btn2Text: 'Descubrir Nuestra Filosofía', btn2Link: '#esencia',
+            btn2Text: 'Ver Ofertas del Mes', btn2Link: '#ofertas',
             heroImage: 'https://images.unsplash.com/photo-1512972972907-6d71529c5e92?w=2000&q=80&auto=format&fit=crop'
         },
         banners: {
@@ -47,7 +47,8 @@
             plantas:  { label: 'Naturaleza · Vida · Bienestar', title: 'Plantas', text: 'Más que decoración, son presencia viva.', image: 'https://images.unsplash.com/photo-1764422097784-0eaa2340d0e1?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true },
             blog:     { label: 'Guías · Rituales · Bienestar', title: 'Journal', text: 'Lecturas para una vida más consciente.', image: 'https://images.unsplash.com/photo-1568990416308-c998af4cf9ee?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true },
             nosotros: { label: 'Naturaleza · Armonía · Propósito', title: 'Filosofía', text: 'No vendemos objetos.', image: 'https://images.unsplash.com/photo-1650208532541-572697b3dd40?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true },
-            contacto: { label: 'Estamos para acompañarte', title: 'Hablemos de tu espacio', text: 'Contanos qué te gustaría transformar.', image: 'https://images.unsplash.com/photo-1619166855707-bba87a7772a2?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true }
+            contacto: { label: 'Estamos para acompañarte', title: 'Hablemos de tu espacio', text: 'Contanos qué te gustaría transformar.', image: 'https://images.unsplash.com/photo-1619166855707-bba87a7772a2?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true },
+            faq:      { label: 'Estamos para ayudarte', title: 'Preguntas Frecuentes', text: 'Envíos, pagos, autenticidad y cuidados. Todo lo que solés preguntarnos antes de comprar.', image: 'https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true }
         },
         categories: [], intentions: [], products: [],
         blog: [], faqs: [], testimonials: [], media: [], messages: [],

@@ -44,7 +44,7 @@
     }
 
     /* ---- Banners de páginas internas ---- */
-    var bannerKey = { 'catalogo.html': 'catalogo', 'piedras.html': 'piedras', 'plantas.html': 'plantas', 'blog.html': 'blog', 'nosotros.html': 'nosotros', 'contacto.html': 'contacto' }[page];
+    var bannerKey = { 'catalogo.html': 'catalogo', 'piedras.html': 'piedras', 'plantas.html': 'plantas', 'blog.html': 'blog', 'nosotros.html': 'nosotros', 'contacto.html': 'contacto', 'preguntas-frecuentes.html': 'faq' }[page];
     if (bannerKey && s.banners[bannerKey]) {
         var b = s.banners[bannerKey];
         set('.page-hero .eyebrow', 'text', b.label);
@@ -61,8 +61,8 @@
         }
     }
 
-    /* ---- FAQ dinámica (nosotros) ---- */
-    if (page === 'nosotros.html') {
+    /* ---- FAQ dinámica ---- */
+    if (page === 'preguntas-frecuentes.html') {
         var faqEl = document.querySelector('.faq');
         var faqs = (s.faqs || []).filter(function (f) { return f.active !== false; });
         if (faqEl && faqs.length) {
