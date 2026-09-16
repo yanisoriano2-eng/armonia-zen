@@ -382,7 +382,7 @@
 
     /* ---- Botones ---- */
     function wireButtons(p) {
-        var wa  = (window.AZ && AZ.get && AZ.get('whatsapp')) || '5491234567890';
+        var wa  = (window.AZ_WA) || (window.AZ && AZ.get && AZ.get('settings.whatsapp.number')) || '5491234567890';
         var msg = encodeURIComponent('Hola, me interesa: '+p.name+' ('+money(p.price)+')');
         var waHref = 'https://wa.me/'+wa+'?text='+msg;
         function doCart(){ if (window.addToCart) addToCart(p.name, p.price); }

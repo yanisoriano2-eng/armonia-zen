@@ -7,9 +7,11 @@
     'use strict';
     if (!window.AZ) return;
 
-    var s = AZ.all();
     var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     if (page === '' ) page = 'index.html';
+
+    AZ.onReady(function () {
+    var s = AZ.all();
 
     function set(sel, prop, val) {
         var el = document.querySelector(sel);
@@ -88,4 +90,5 @@
     }
 
     function escapeHtml(t) { var d = document.createElement('div'); d.textContent = t == null ? '' : t; return d.innerHTML; }
+    });
 })();

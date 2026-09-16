@@ -39,7 +39,7 @@
             text: 'Creemos que cada objeto tiene el poder de transformar cómo se siente un espacio.',
             btn1Text: 'Explorar Colección', btn1Link: 'catalogo.html',
             btn2Text: 'Ver Ofertas del Mes', btn2Link: '#ofertas',
-            heroImage: 'https://images.unsplash.com/photo-1512972972907-6d71529c5e92?w=2000&q=80&auto=format&fit=crop'
+            heroImage: 'imagenes/banner.jpg'
         },
         banners: {
             catalogo: { label: 'La Colección', title: 'Tienda', text: 'Cada pieza, elegida por cómo transforma el aire de un espacio.', image: 'https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true },

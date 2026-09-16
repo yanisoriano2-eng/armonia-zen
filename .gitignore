@@ -1,3 +1,4 @@
 imagenes/*
 !imagenes/catalogo/
 !imagenes/catalogo/**
+!imagenes/banner.jpg

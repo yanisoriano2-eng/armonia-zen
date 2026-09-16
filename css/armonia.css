@@ -4,22 +4,22 @@
    ========================================================================== */
 
 :root {
-    /* Paleta — cálida, natural, luminosa (rebrand 2026) */
-    --forest: #F5F1E8;   /* antes fondo oscuro dominante → ahora marfil cálido, fondo dominante */
-    --moss: #A8B5A0;     /* antes verde medio-oscuro → ahora verde salvia, secciones suaves */
-    --ivory: #465044;    /* antes texto claro → ahora verde profundo, texto dominante */
-    --gold: #C6A96B;     /* dorado champagne — usar con moderación (detalles, líneas, iconos) */
-    --beige: #D8C9B2;    /* beige arena */
+    /* Paleta — premium, vívida, ecommerce (rebrand 2026 v2) */
+    --forest: #FAF7EF;   /* fondo marfil, limpio y luminoso */
+    --moss: #DCEBDD;     /* secciones suaves — verde menta claro (antes salvia apagado) */
+    --ivory: #16211A;    /* texto principal — verde casi negro, alto contraste */
+    --gold: #C08A2E;     /* dorado vívido — antes champagne pálido, ahora con cuerpo */
+    --beige: #F0E4CB;    /* beige arena, más cálido y claro */
 
-    --ivory-soft: rgba(70, 80, 68, 0.72);
-    --ivory-faint: rgba(70, 80, 68, 0.48);
-    --gold-line: rgba(198, 169, 107, 0.4);
+    --ivory-soft: rgba(22, 33, 26, 0.74);
+    --ivory-faint: rgba(22, 33, 26, 0.5);
+    --gold-line: rgba(192, 138, 46, 0.4);
 
     /* Nuevos tonos de marca */
-    --olive: #78866B;        /* botones y elementos importantes */
-    --olive-deep: #5f6b55;   /* hover de oliva */
-    --sand: #D8C9B2;         /* beige arena (alias de --beige) */
-    --terracotta: #B98268;   /* acento cálido, uso puntual */
+    --olive: #1E7A46;        /* verde esmeralda vívido — botones y elementos importantes */
+    --olive-deep: #145C34;   /* hover de esmeralda */
+    --sand: #F0E4CB;         /* beige arena (alias de --beige) */
+    --terracotta: #C23B4F;   /* rojo rubí vívido — ofertas y acentos de urgencia */
 
     /* Texto/iconos SOBRE fotografías — se mantienen claros a propósito */
     --on-photo: #FBF7EE;
@@ -1344,14 +1344,15 @@ img { display: block; max-width: 100%; }
    ========================================================================== */
 
 :root {
-    /* Sistema del catálogo (rebrand 2026) — nombres heredados, valores nuevos */
-    --sand:       #D8C9B2;              /* placeholder de imagen — beige arena */
-    --sage:       #78866B;              /* acentos/hover — verde oliva */
-    --sage-dark:  #465044;              /* texto principal — verde profundo */
-    --warm-white: #F5F1E8;              /* fondo del catálogo — marfil cálido */
-    --warm-gold:  #C6A96B;              /* dorado champagne */
-    --sage-line:  rgba(70,80,68,0.14);
-    --sage-faint: rgba(70,80,68,0.58);
+    /* Sistema del catálogo (rebrand 2026 v2) — nombres heredados, valores vívidos */
+    --sand:       #F0E4CB;              /* placeholder de imagen — beige arena cálido */
+    --sage:       #1E7A46;              /* acentos/hover — verde esmeralda vívido */
+    --sage-dark:  #16211A;              /* texto principal — verde casi negro, alto contraste */
+    --warm-white: #FAF7EF;              /* fondo del catálogo — marfil limpio */
+    --warm-gold:  #C08A2E;              /* dorado vívido */
+    --sage-line:  rgba(22,33,26,0.12);
+    --sage-faint: rgba(22,33,26,0.56);
+    --ruby:       #C23B4F;              /* rojo rubí — ofertas, favoritos, urgencia */
 }
 
 /* Wrapper que cambia el fondo a claro */
@@ -1495,7 +1496,9 @@ img { display: block; max-width: 100%; }
 .pcard {
     background: var(--warm-white);
     border: 1px solid var(--sage-line);
-    transition: box-shadow 0.55s var(--ease), transform 0.55s var(--ease);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.4s var(--ease), transform 0.4s var(--ease), border-color 0.4s var(--ease);
     cursor: pointer;
     text-decoration: none;
     color: inherit;
@@ -1503,8 +1506,9 @@ img { display: block; max-width: 100%; }
     flex-direction: column;
 }
 .pcard:hover {
-    box-shadow: 0 18px 55px rgba(0,0,0,0.3);
+    box-shadow: 0 18px 46px rgba(22,33,26,0.18);
     transform: translateY(-5px);
+    border-color: var(--sage);
 }
 
 .pcard__img {
@@ -1541,12 +1545,12 @@ img { display: block; max-width: 100%; }
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
 }
-.pbadge--sale    { background: var(--terracotta); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
-.pbadge--hot     { background: rgba(47, 59, 50, 0.85); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
-.pbadge--artisan { background: rgba(203, 183, 124, 0.9); color: var(--sage-dark); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-.pbadge--natural { background: rgba(132, 145, 135, 0.85); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
-.pbadge--wellness{ background: rgba(232,221,208,0.9); color: var(--sage-dark); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-.pbadge--gift    { background: rgba(255,255,255,0.9); color: var(--sage-dark); border: 1px solid var(--sage-line); }
+.pbadge--sale    { background: var(--ruby); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+.pbadge--hot     { background: var(--sage-dark); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+.pbadge--artisan { background: var(--warm-gold); color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.pbadge--natural { background: var(--sage); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.pbadge--wellness{ background: #fff; color: var(--sage); border: 1px solid var(--sage); }
+.pbadge--gift    { background: #fff; color: var(--ruby); border: 1px solid var(--ruby); }
 
 /* Wishlist btn */
 .pcard__wish {
@@ -1570,7 +1574,7 @@ img { display: block; max-width: 100%; }
 }
 .pcard:hover .pcard__wish,
 .pcard__wish.liked { opacity: 1; transform: scale(1); }
-.pcard__wish.liked { color: #c97b6e; }
+.pcard__wish.liked { color: var(--ruby); }
 
 /* Overlay acción rápida */
 .pcard__overlay {
@@ -1652,8 +1656,9 @@ img { display: block; max-width: 100%; }
 }
 .pcard__price {
     font-family: var(--serif);
-    font-size: 1.2rem;
-    color: var(--sage-dark);
+    font-size: 1.28rem;
+    font-weight: 600;
+    color: var(--gold);
 }
 .pcard__price-orig {
     font-size: 0.85rem;
@@ -1661,7 +1666,7 @@ img { display: block; max-width: 100%; }
     text-decoration: line-through;
     margin-right: 6px;
 }
-.pcard__price-sale { color: var(--terracotta); }
+.pcard__price-sale { color: var(--ruby); }
 .pcard__foot-actions {
     display: flex;
     align-items: center;
@@ -2031,11 +2036,27 @@ img { display: block; max-width: 100%; }
 }
 @media (max-width: 600px) {
     .catalog-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-    .pcard__body { padding: 14px 15px 18px; }
-    .pcard__name { font-size: 1.08rem; }
-    .cat-tab { padding: 15px 14px; font-size: 0.62rem; }
-    .cat-bar__tools { flex-direction: column; align-items: flex-start; }
-    .cat-search { width: 100%; }
+    .pcard { border-radius: 12px; }
+    .pcard__img { aspect-ratio: 1/1; }
+    .pcard__body { padding: 12px 12px 14px; }
+    .pcard__sub { font-size: 0.56rem; margin-bottom: 4px; }
+    .pcard__name { font-size: 0.92rem; margin-bottom: 4px; line-height: 1.18; }
+    .pcard__desc { font-size: 0.76rem; line-height: 1.4; margin-bottom: 10px; -webkit-line-clamp: 2; }
+    .pcard__foot { padding-top: 10px; gap: 6px; }
+    .pcard__price { font-size: 1.02rem; }
+    .pcard__link { font-size: 0.56rem; }
+    .pcard__add { width: 28px; height: 28px; font-size: 0.85rem; }
+    .pcard__badges { top: 8px; left: 8px; }
+    .pcard__wish { top: 8px; right: 8px; width: 28px; height: 28px; opacity: 1; transform: scale(1); }
+    .pbadge { font-size: 0.52rem; padding: 4px 8px; }
+    .cat-tab { padding: 12px 12px; font-size: 0.6rem; }
+    .cat-bar__row { padding: 0 16px; }
+    .cat-bar__sub { padding: 8px 16px; min-height: 0; }
+    .cat-bar__tools { padding: 10px 16px; gap: 10px; }
+    .cat-search { width: 100%; order: 1; }
+    .cat-sort { order: 2; flex: 1; font-size: 0.62rem; padding: 0.45em 0.6em; }
+    .cat-count { order: 3; margin-left: 0; }
+    .catalog-section { padding: 14px 16px 40px; }
     .prod-features__list { grid-template-columns: 1fr; }
     .prod-energy__grid { grid-template-columns: 1fr; }
     .recently-grid { grid-column: repeat(2, 1fr); }
@@ -2256,15 +2277,15 @@ img { display: block; max-width: 100%; }
     border: 1px solid;
 }
 .prod-body .pbadge--artesanal,
-.prod-body .pbadge--artisan   { border-color: var(--gold-line); color: var(--gold); }
-.prod-body .pbadge--natural   { border-color: rgba(126,146,120,.4); color: #7E9278; }
-.prod-body .pbadge--especial  { background: var(--gold); color: var(--ivory); border-color: var(--gold); }
-.prod-body .pbadge--importado { border-color: var(--ivory-faint); color: var(--ivory-soft); }
-.prod-body .pbadge--popular   { background: var(--moss); border-color: var(--ivory-faint); color: var(--ivory); }
-.prod-body .pbadge--sale      { background: var(--terracotta); color: #fff; border-color: rgba(255,255,255,0.25); }
-.prod-body .pbadge--hot       { background: rgba(47, 59, 50, 0.9); color: #fff; border-color: rgba(255,255,255,0.15); }
-.prod-body .pbadge--wellness  { background: rgba(232,221,208,0.95); color: var(--sage-dark); border-color: transparent; }
-.prod-body .pbadge--gift      { background: rgba(255,255,255,0.95); color: var(--sage-dark); border-color: transparent; }
+.prod-body .pbadge--artisan   { background: var(--gold); color: #fff; border-color: var(--gold); }
+.prod-body .pbadge--natural   { background: #fff; border-color: var(--sage); color: var(--sage); }
+.prod-body .pbadge--especial  { background: var(--gold); color: #fff; border-color: var(--gold); }
+.prod-body .pbadge--importado { background: #fff; border-color: var(--ivory-faint); color: var(--ivory-soft); }
+.prod-body .pbadge--popular   { background: var(--sage-dark); border-color: var(--sage-dark); color: #fff; }
+.prod-body .pbadge--sale      { background: var(--ruby); color: #fff; border-color: rgba(255,255,255,0.25); }
+.prod-body .pbadge--hot       { background: var(--sage-dark); color: #fff; border-color: rgba(255,255,255,0.15); }
+.prod-body .pbadge--wellness  { background: #fff; color: var(--sage); border-color: var(--sage); }
+.prod-body .pbadge--gift      { background: #fff; color: var(--ruby); border-color: var(--ruby); }
 
 /* ----- HERO 50/50 ----- */
 .ph-hero {

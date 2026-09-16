@@ -14,8 +14,13 @@
 
     /* ---------- Header: transparente -> glassmorphism ---------- */
     var header = document.getElementById('header');
+    /* Páginas internas cargan el header ya "scrolled" (opaco) a propósito,
+       porque no tienen una foto de hero oscura detrás para contrastar el
+       texto claro del header transparente. Solo alternamos el estado en
+       páginas que arrancan sin esa clase (home, con hero transparente). */
+    var headerTogglesOnScroll = header && !header.classList.contains('scrolled');
     function onScrollHeader() {
-        if (!header) return;
+        if (!header || !headerTogglesOnScroll) return;
         if (window.scrollY > 60) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
     }
