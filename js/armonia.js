@@ -20,6 +20,84 @@
         });
     });
 
+    /* ---------- Tarjetas de "piezas destacadas" (home): tocar lleva al detalle ---------- */
+    document.querySelectorAll('.product[data-id]').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+            if (e.target.closest('button, a')) return;
+            window.location.href = 'producto.html?id=' + card.getAttribute('data-id');
+        });
+    });
+
+    /* ---------- Descubrí tu piedra energética ---------- */
+    var stoneForm = document.getElementById('stone-finder-form');
+    if (stoneForm) {
+        var STONES = {
+            aries:       { stone: 'Ojo de Tigre',        trait: 'coraje, confianza y ganas de arrancar todo lo que te propongas.', id: 'pulsera-ojo-tigre-acero', name: 'Pulsera de Acero con Ojo de Tigre', price: 5000, img: 'imagenes/catalogo/pulsera-ojo-tigre-acero.jpg' },
+            tauro:       { stone: 'Cuarzo Rosa',         trait: 'amor propio, calma y estabilidad emocional.', id: 'cadena-corazon-cuarzo-rosa-acero', name: 'Cadena Corazón Cuarzo Rosa', price: 8000, img: 'imagenes/catalogo/cadena-corazon-cuarzo-rosa-acero.jpg' },
+            geminis:     { stone: 'Citrino',             trait: 'alegría, claridad mental y buena comunicación.', id: 'cadena-citrino-bruto-acero', name: 'Cadena Piedra de Citrino en Bruto', price: 12000, img: 'imagenes/catalogo/cadena-citrino-bruto-acero.jpg' },
+            cancer:      { stone: 'Piedra de la Luna',   trait: 'intuición, sensibilidad y conexión con tus ciclos.', id: 'aros-piedra-luna-acero', name: 'Aros de Acero Quirúrgico con Piedra de la Luna', price: 5000, img: 'imagenes/catalogo/aros-piedra-luna-acero.jpg' },
+            leo:         { stone: 'Ojo de Tigre',        trait: 'poder personal y brillo propio, sin miedo a mostrarte.', id: 'anillo-ojo-tigre-acero', name: 'Anillo de Acero con Ojo de Tigre', price: 8000, img: 'imagenes/catalogo/anillo-ojo-tigre-acero.jpg' },
+            virgo:       { stone: 'Aventurina',          trait: 'orden, buena suerte y calma frente a los cambios.', id: 'aros-aventurina-acero', name: 'Aros de Acero Quirúrgico con Aventurina', price: 5000, img: 'imagenes/catalogo/aros-aventurina-acero.jpg' },
+            libra:       { stone: 'Cuarzo Rosa',         trait: 'armonía, vínculos sanos y equilibrio emocional.', id: 'anillo-alpaca-cuarzo-rosa', name: 'Anillo de Alpaca con Cuarzo Rosa', price: 8000, img: 'imagenes/catalogo/anillo-alpaca-cuarzo-rosa.jpg' },
+            escorpio:    { stone: 'Obsidiana',           trait: 'transformación, intensidad y protección desde la fuerza.', id: 'cadena-corazon-obsidiana-acero', name: 'Cadena Corazón Obsidiana', price: 8000, img: 'imagenes/catalogo/cadena-corazon-obsidiana-acero.jpg' },
+            sagitario:   { stone: 'Turquesa',            trait: 'aventura, libertad y protección en cada viaje.', id: 'anillo-alpaca-turquesa', name: 'Anillo de Alpaca con Turquesa', price: 8000, img: 'imagenes/catalogo/anillo-alpaca-turquesa.jpg' },
+            capricornio: { stone: 'Labradorita + Pirita', trait: 'ambición, visión clara y voluntad para construir a largo plazo.', id: 'anillo-labradorita-pirita', name: 'Anillo Labradorita + Pirita', price: 15000, img: 'imagenes/catalogo/anillo-labradorita-pirita-real.jpg' },
+            acuario:     { stone: 'Amatista',            trait: 'originalidad, claridad mental y espíritu independiente.', id: 'anillo-alpaca-amatista-regulable', name: 'Anillo Regulable de Alpaca con Amatista', price: 10000, img: 'imagenes/catalogo/anillo-alpaca-amatista-regulable.jpg' },
+            piscis:      { stone: 'Amatista',            trait: 'intuición profunda, sensibilidad y conexión espiritual.', id: 'pulsera-amatista-piedras', name: 'Pulsera de Piedras Amatista', price: 10000, img: 'imagenes/catalogo/pulsera-amatista-piedras.jpg' }
+        };
+
+        function zodiacSign(month, day) {
+            if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) return 'capricornio';
+            if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) return 'acuario';
+            if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) return 'piscis';
+            if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return 'aries';
+            if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) return 'tauro';
+            if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) return 'geminis';
+            if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) return 'cancer';
+            if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) return 'leo';
+            if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) return 'virgo';
+            if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) return 'libra';
+            if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) return 'escorpio';
+            return 'sagitario';
+        }
+
+        stoneForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var nameEl = document.getElementById('stone-finder-name');
+            var dateEl = document.getElementById('stone-finder-date');
+            var resultEl = document.getElementById('stone-finder-result');
+            var name = (nameEl.value || '').trim();
+            var dateVal = dateEl.value;
+            if (!name || !dateVal) return;
+
+            var parts = dateVal.split('-');
+            var month = parseInt(parts[1], 10);
+            var day = parseInt(parts[2], 10);
+            var sign = zodiacSign(month, day);
+            var rec = STONES[sign];
+
+            var firstName = name.split(' ')[0];
+            resultEl.innerHTML =
+                '<div class="stone-result reveal in">' +
+                    '<img class="stone-result__img" src="' + rec.img + '" alt="' + rec.name + '">' +
+                    '<div class="stone-result__body">' +
+                        '<span class="stone-result__eyebrow">Para ' + firstName + '</span>' +
+                        '<h3 class="stone-result__stone">Tu piedra es ' + rec.stone + '</h3>' +
+                        '<p class="stone-result__trait">Te acompaña con ' + rec.trait + '</p>' +
+                        '<div class="stone-result__product">' +
+                            '<span class="stone-result__product-name">' + rec.name + '</span>' +
+                            '<span class="stone-result__product-price">' + money(rec.price) + '</span>' +
+                        '</div>' +
+                        '<div class="stone-result__actions">' +
+                            '<a href="producto.html?id=' + rec.id + '" class="btn btn--solid">Ver detalle</a>' +
+                            '<button class="btn" onclick="addToCart(\'' + rec.name.replace(/'/g, "\\'") + '\', ' + rec.price + ')">Agregar al carrito</button>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    }
+
     /* ---------- Header: transparente -> glassmorphism ---------- */
     var header = document.getElementById('header');
     /* Páginas internas cargan el header ya "scrolled" (opaco) a propósito,
@@ -117,9 +195,19 @@
         } else {
             itemsEl.innerHTML = cart.map(function (item, i) {
                 return '<div class="cart-line">' +
-                    '<div><div class="cart-line__name">' + item.name + '</div>' +
-                    '<div class="cart-line__price">' + (item.qty > 1 ? item.qty + ' × ' : '') + money(item.price) + '</div></div>' +
-                    '<button class="cart-line__remove" onclick="removeFromCart(' + i + ')">Quitar</button>' +
+                    '<div class="cart-line__top">' +
+                        '<div><div class="cart-line__name">' + item.name + '</div>' +
+                        '<div class="cart-line__price">' + money(item.price) + ' c/u</div></div>' +
+                        '<button class="cart-line__remove" onclick="removeFromCart(' + i + ')" aria-label="Quitar">&times;</button>' +
+                    '</div>' +
+                    '<div class="cart-line__bottom">' +
+                        '<div class="cart-line__qty">' +
+                            '<button class="cart-line__qty-btn" onclick="decrementCartItem(' + i + ')" aria-label="Restar uno">&minus;</button>' +
+                            '<span class="cart-line__qty-val">' + item.qty + '</span>' +
+                            '<button class="cart-line__qty-btn" onclick="incrementCartItem(' + i + ')" aria-label="Sumar uno">+</button>' +
+                        '</div>' +
+                        '<div class="cart-line__linetotal">' + money(item.price * item.qty) + '</div>' +
+                    '</div>' +
                     '</div>';
             }).join('');
         }
@@ -142,6 +230,21 @@
 
     window.removeFromCart = function (index) {
         cart.splice(index, 1);
+        saveCart();
+        renderCart();
+    };
+
+    window.incrementCartItem = function (index) {
+        if (!cart[index]) return;
+        cart[index].qty += 1;
+        saveCart();
+        renderCart();
+    };
+
+    window.decrementCartItem = function (index) {
+        if (!cart[index]) return;
+        cart[index].qty -= 1;
+        if (cart[index].qty <= 0) cart.splice(index, 1);
         saveCart();
         renderCart();
     };

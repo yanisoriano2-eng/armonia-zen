@@ -868,6 +868,88 @@ img { display: block; max-width: 100%; }
 }
 
 /* ==========================================================================
+   DESCUBRÍ TU PIEDRA ENERGÉTICA
+   ========================================================================== */
+
+.stone-finder {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--forest);
+    border: 1px solid var(--gold-line);
+    border-radius: 20px;
+    padding: clamp(30px, 5vw, 56px);
+}
+.stone-finder__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+.stone-finder__field {
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.stone-finder__field label {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--olive);
+}
+.stone-finder__field input {
+    background: #fff;
+    border: 1px solid var(--gold-line);
+    border-radius: 10px;
+    padding: 0.9em 1em;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--ivory);
+}
+.stone-finder__field input:focus { outline: none; border-color: var(--gold); }
+.stone-finder__form .btn { flex: 0 0 auto; }
+
+.stone-result {
+    margin-top: 40px;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 16px;
+    padding: 26px;
+    border: 1px solid var(--gold-line);
+}
+.stone-result__img { width: 140px; height: 140px; object-fit: cover; border-radius: 12px; flex-shrink: 0; }
+.stone-result__body { flex: 1; min-width: 220px; }
+.stone-result__eyebrow { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+.stone-result__stone { font-family: var(--display); font-size: 1.6rem; font-weight: 500; margin: 6px 0 8px; color: var(--ivory); }
+.stone-result__trait { color: var(--ivory-soft); font-size: 0.95rem; margin-bottom: 16px; }
+.stone-result__product {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ivory);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--gold-line);
+}
+.stone-result__product-price { color: var(--gold); font-weight: 600; }
+.stone-result__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+    .stone-finder { padding: 26px 20px; border-radius: 16px; }
+    .stone-finder__form { flex-direction: column; align-items: stretch; }
+    .stone-result { flex-direction: column; text-align: center; padding: 22px; }
+    .stone-result__img { width: 100%; height: 180px; }
+    .stone-result__product { flex-direction: column; gap: 4px; text-align: center; }
+    .stone-result__actions { justify-content: center; }
+}
+
+/* ==========================================================================
    FOOTER
    ========================================================================== */
 
@@ -968,15 +1050,40 @@ img { display: block; max-width: 100%; }
 .cart-empty { color: var(--ivory-faint); text-align: center; margin-top: 40px; font-size: 0.95rem; }
 .cart-line {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 12px;
     padding: 18px 0;
     border-bottom: 1px solid var(--gold-line);
 }
+.cart-line__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .cart-line__name { font-family: var(--serif); font-size: 1.1rem; }
-.cart-line__price { color: var(--beige); font-size: 0.9rem; }
-.cart-line__remove { background: none; border: none; color: var(--ivory-faint); cursor: pointer; font-size: 0.78rem; letter-spacing: 0.1em; }
+.cart-line__price { color: var(--beige); font-size: 0.85rem; margin-top: 3px; }
+.cart-line__remove { background: none; border: none; color: var(--ivory-faint); cursor: pointer; font-size: 1.15rem; line-height: 1; flex-shrink: 0; transition: color 0.3s var(--ease); }
 .cart-line__remove:hover { color: var(--gold); }
+.cart-line__bottom { display: flex; justify-content: space-between; align-items: center; }
+.cart-line__qty {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--gold-line);
+    border-radius: 999px;
+    overflow: hidden;
+}
+.cart-line__qty-btn {
+    width: 30px; height: 30px;
+    background: none;
+    border: none;
+    color: var(--ivory);
+    font-size: 1.05rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s var(--ease);
+}
+.cart-line__qty-btn:hover { background: rgba(203,183,124,0.18); }
+.cart-line__qty-val { min-width: 26px; text-align: center; font-size: 0.9rem; }
+.cart-line__linetotal { font-family: var(--serif); font-size: 1.05rem; color: var(--gold); }
 .cart-panel__foot { padding: 30px; border-top: 1px solid var(--gold-line); }
 .cart-total { display: flex; justify-content: space-between; margin-bottom: 22px; font-family: var(--serif); font-size: 1.2rem; }
 .cart-panel__foot .btn { width: 100%; justify-content: center; }
@@ -1621,10 +1728,16 @@ img { display: block; max-width: 100%; }
     padding: 20px;
     background: linear-gradient(180deg, transparent 55%, rgba(47,59,50,0.55) 100%);
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.5s var(--ease);
     z-index: 1;
 }
-.pcard:hover .pcard__overlay { opacity: 1; }
+/* El overlay de acción rápida solo se activa con mouse real: en pantallas táctiles
+   el propio toque puede disparar :hover brevemente, dejando el botón "Agregar al
+   Carrito" invisible pero clickeable justo donde el usuario toca para ver el detalle. */
+@media (hover: hover) and (pointer: fine) {
+    .pcard:hover .pcard__overlay { opacity: 1; pointer-events: auto; }
+}
 
 .pcard__wa-quick, .pcard__qv-quick, .pcard__cart-quick {
     width: 100%;

@@ -209,88 +209,111 @@
         </div>
     </section>
 
-    <!-- PRODUCTOS DESTACADOS -->
+    <!-- PRODUCTOS DESTACADOS (reales, de la tienda) -->
     <section class="section">
         <div class="section-head reveal">
-            <span class="eyebrow">Selección</span>
-            <h2 class="display">Piezas destacadas</h2>
-            <p class="lead" style="margin-top:18px;">Una pequeña selección de la colección. Cada objeto, elegido por cómo cambia el aire de un espacio.</p>
+            <span class="eyebrow">Directo de la tienda</span>
+            <h2 class="display">Un vistazo a la colección real.</h2>
+            <p class="lead" style="margin-top:18px;">Piezas que ya están disponibles hoy. Tocá cualquiera para ver el detalle y pedirla por WhatsApp.</p>
         </div>
         <div class="products">
-            <article class="product reveal">
+            <article class="product reveal" data-id="anillo-labradorita-pirita">
                 <div class="product__media">
-                    <img src="https://images.unsplash.com/photo-1623241923490-5b2fd532828f?w=700&q=80&auto=format&fit=crop" alt="Lámpara de sal del Himalaya">
+                    <img src="imagenes/catalogo/anillo-labradorita-pirita-real.jpg" alt="Anillo Labradorita + Pirita">
                     <div class="product__quick">
-                        <button onclick="addToCart('Lámpara de Sal del Himalaya', 45000)">Añadir · $45.000</button>
+                        <button onclick="addToCart('Anillo Labradorita + Pirita', 15000)">Añadir · $15.000</button>
                     </div>
                 </div>
-                <div class="product__cat">Luz</div>
+                <div class="product__cat">Joyería</div>
+                <h3 class="product__name">Anillo Labradorita + Pirita</h3>
+                <div class="product__price">$15.000</div>
+            </article>
+
+            <article class="product reveal" data-delay="1" data-id="fuente-doble-pajaro-real">
+                <div class="product__media">
+                    <img src="imagenes/catalogo/fuente-doble-pajaro-real.jpg" alt="Fuente Doble con Pájaros">
+                    <div class="product__quick">
+                        <button onclick="addToCart('Fuente Doble con Pájaros, Motor y Luces LED', 70000)">Añadir · $70.000</button>
+                    </div>
+                </div>
+                <div class="product__cat">Fuentes</div>
+                <h3 class="product__name">Fuente Doble con Pájaros</h3>
+                <div class="product__price">$70.000</div>
+            </article>
+
+            <article class="product reveal" data-delay="2" data-id="lampara-sal-himalaya-real">
+                <div class="product__media">
+                    <img src="imagenes/catalogo/lampara-sal-himalaya-real.jpg" alt="Lámpara de Sal del Himalaya">
+                    <div class="product__quick">
+                        <button onclick="addToCart('Lámpara de Sal del Himalaya', 19000)">Añadir · $19.000</button>
+                    </div>
+                </div>
+                <div class="product__cat">Lámparas de Sal</div>
                 <h3 class="product__name">Lámpara de Sal del Himalaya</h3>
-                <div class="product__price">$45.000</div>
+                <div class="product__price">$19.000</div>
             </article>
 
-            <article class="product reveal" data-delay="1">
+            <article class="product reveal" data-id="buda-paz-ceramica">
                 <div class="product__media">
-                    <img src="https://images.unsplash.com/photo-1585383234137-2367d3c5302d?w=700&q=80&auto=format&fit=crop" alt="Amatista natural">
+                    <img src="imagenes/catalogo/buda-paz-ceramica.jpg" alt="Buda de la Paz">
                     <div class="product__quick">
-                        <button onclick="addToCart('Amatista Natural', 22000)">Añadir · $22.000</button>
+                        <button onclick="addToCart('Buda de la Paz', 8000)">Añadir · $8.000</button>
                     </div>
                 </div>
-                <div class="product__cat">Tierra</div>
-                <h3 class="product__name">Amatista Natural</h3>
-                <div class="product__price">$22.000</div>
+                <div class="product__cat">Decoración</div>
+                <h3 class="product__name">Buda de la Paz</h3>
+                <div class="product__price">$8.000</div>
             </article>
 
-            <article class="product reveal" data-delay="2">
+            <article class="product reveal" data-delay="1" data-id="planta-monstera-deliciosa">
                 <div class="product__media">
-                    <img src="https://images.unsplash.com/photo-1553090298-50fc519730d2?w=700&q=80&auto=format&fit=crop" alt="Fuente de agua zen">
+                    <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?w=700&q=80&auto=format&fit=crop" alt="Monstera Deliciosa">
                     <div class="product__quick">
-                        <button onclick="addToCart('Fuente de Agua Zen', 65000)">Añadir · $65.000</button>
+                        <button onclick="addToCart('Monstera Deliciosa', 28000)">Añadir · $28.000</button>
                     </div>
                 </div>
-                <div class="product__cat">Agua</div>
-                <h3 class="product__name">Fuente de Agua Zen</h3>
-                <div class="product__price">$65.000</div>
-            </article>
-
-            <article class="product reveal">
-                <div class="product__media">
-                    <img src="https://images.unsplash.com/photo-1596045571419-664297d8f502?w=700&q=80&auto=format&fit=crop" alt="Buda meditativo">
-                    <div class="product__quick">
-                        <button onclick="addToCart('Buda Meditativo', 35000)">Añadir · $35.000</button>
-                    </div>
-                </div>
-                <div class="product__cat">Presencia</div>
-                <h3 class="product__name">Buda Meditativo</h3>
-                <div class="product__price">$35.000</div>
-            </article>
-
-            <article class="product reveal" data-delay="1">
-                <div class="product__media">
-                    <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?w=700&q=80&auto=format&fit=crop" alt="Planta Monstera">
-                    <div class="product__quick">
-                        <button onclick="addToCart('Planta Monstera', 28000)">Añadir · $28.000</button>
-                    </div>
-                </div>
-                <div class="product__cat">Naturaleza</div>
+                <div class="product__cat">Plantas</div>
                 <h3 class="product__name">Monstera Deliciosa</h3>
                 <div class="product__price">$28.000</div>
             </article>
 
-            <article class="product reveal" data-delay="2">
+            <article class="product reveal" data-delay="2" data-id="porta-sahumerio-buda-real">
                 <div class="product__media">
-                    <img src="https://images.unsplash.com/photo-1626937526107-ca0be0eecccd?w=700&q=80&auto=format&fit=crop" alt="Incienso de sándalo">
+                    <img src="imagenes/catalogo/porta-sahumerio-buda-real.jpg" alt="Porta Sahumerio + Buda">
                     <div class="product__quick">
-                        <button onclick="addToCart('Incienso de Sándalo', 12000)">Añadir · $12.000</button>
+                        <button onclick="addToCart('Porta Sahumerio + Buda', 4900)">Añadir · $4.900</button>
                     </div>
                 </div>
-                <div class="product__cat">Aroma</div>
-                <h3 class="product__name">Incienso de Sándalo</h3>
-                <div class="product__price">$12.000</div>
+                <div class="product__cat">Decoración</div>
+                <h3 class="product__name">Porta Sahumerio + Buda</h3>
+                <div class="product__price">$4.900</div>
             </article>
         </div>
         <div style="text-align:center; margin-top:clamp(50px,7vw,90px);" class="reveal">
             <a href="catalogo.html" class="btn">Ver toda la colección</a>
+        </div>
+    </section>
+
+    <!-- DESCUBRÍ TU PIEDRA ENERGÉTICA -->
+    <section class="section section--ivory" id="descubri-tu-piedra">
+        <div class="section-head reveal">
+            <span class="eyebrow">Para vos</span>
+            <h2 class="display">Descubrí tu piedra energética.</h2>
+            <p class="lead" style="margin-top:18px;">Contanos tu nombre y tu fecha de nacimiento, y te recomendamos la piedra que mejor acompaña tu energía.</p>
+        </div>
+        <div class="stone-finder reveal">
+            <form class="stone-finder__form" id="stone-finder-form">
+                <div class="stone-finder__field">
+                    <label for="stone-finder-name">Tu nombre</label>
+                    <input type="text" id="stone-finder-name" placeholder="Ej: Victoria" required>
+                </div>
+                <div class="stone-finder__field">
+                    <label for="stone-finder-date">Tu fecha de nacimiento</label>
+                    <input type="date" id="stone-finder-date" required>
+                </div>
+                <button type="submit" class="btn btn--solid">Descubrir mi piedra</button>
+            </form>
+            <div class="stone-finder__result" id="stone-finder-result"></div>
         </div>
     </section>
 
