@@ -44,9 +44,13 @@
 
     /* ------------------------------------------------------------------ */
     /* PRODUCTOS                                                            */
+    /* Catálogo de respaldo: se usa si Supabase todavía no tiene los       */
+    /* productos reales cargados (ver admin/sync_products.sql), o si       */
+    /* la conexión falla. Cuando Supabase tiene los datos correctos,       */
+    /* se reemplaza automáticamente más abajo.                             */
     /* ------------------------------------------------------------------ */
 
-    var PRODUCTS = [
+    var FALLBACK_PRODUCTS = [
         /* ---- JOYERÍA / ANILLOS ---- */
         {
             id: 'anillo-labradorita-pirita', name: 'Anillo Labradorita + Pirita',
@@ -666,6 +670,58 @@
         }
     ];
 
+    var PRODUCTS = FALLBACK_PRODUCTS;
+
+    /* ------------------------------------------------------------------ */
+    /* SUPABASE → catálogo (panel de admin)                                */
+    /* Convierte los productos de la tabla "products" (editables desde el  */
+    /* panel) al formato que usa el catálogo del sitio.                    */
+    /* ------------------------------------------------------------------ */
+
+    var BADGE_LABELS = {
+        natural: 'Piedra Natural', artisan: 'Artesanal', hot: 'Destacado',
+        sale: 'Oferta', gift: 'Ideal Regalo', wellness: 'Bienestar', importado: 'Importado'
+    };
+
+    function deriveBadges(p) {
+        var classes = (p.tags || '').split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+        if (p.featured && classes.indexOf('hot') === -1) classes.unshift('hot');
+        if (p.priceOld && p.priceOld > p.price && classes.indexOf('sale') === -1) classes.unshift('sale');
+        return classes.map(function(c) { return { cls: c, label: BADGE_LABELS[c] || c }; });
+    }
+
+    function buildFeatures(p) {
+        var rows = [];
+        if (p.material)  rows.push({ l: 'Material', v: p.material });
+        if (p.size)       rows.push({ l: 'Tamaño', v: p.size });
+        if (p.color)      rows.push({ l: 'Color', v: p.color });
+        if (p.placement)  rows.push({ l: 'Colocación', v: p.placement });
+        if (p.care)       rows.push({ l: 'Cuidado', v: p.care });
+        if (p.howToUse)   rows.push({ l: 'Cómo usar', v: p.howToUse });
+        return rows;
+    }
+
+    function buildEnergy(p) {
+        if (!p.meaning && !p.intention) return null;
+        return { name: p.subcategory || p.category, intention: p.meaning || p.intention };
+    }
+
+    function mapFromAZ(p) {
+        return {
+            id: p.id, name: p.name,
+            cat: p.category, subcat: p.subcategory,
+            price: p.price,
+            priceOrig: (p.priceOld && p.priceOld > p.price) ? p.priceOld : undefined,
+            img: p.image,
+            descShort: p.descShort, descLong: p.descLong,
+            benefits: (p.benefits || '').split('\n').map(function(s) { return s.trim(); }).filter(Boolean),
+            badges: deriveBadges(p),
+            features: buildFeatures(p),
+            energy: buildEnergy(p),
+            gallery: p.gallery || []
+        };
+    }
+
     /* ------------------------------------------------------------------ */
     /* WISHLIST & RECENTLY VIEWED                                          */
     /* ------------------------------------------------------------------ */
@@ -699,8 +755,7 @@
     function money(n) { return '$ ' + Number(n).toLocaleString('es-AR'); }
 
     function buildImg(p) {
-        if (p.img && (p.img.indexOf('imagenes/') === 0 || p.img.indexOf('http') === 0)) return p.img;
-        return BASE + I[p.img || 'crystal'] + Q;
+        return p.img || (BASE + I.crystal + Q);
     }
 
     function badgeHtml(badges) {
@@ -784,14 +839,24 @@
     }
 
     /* Siempre disponible para producto.html y cualquier otra página */
-    window.__azRecent   = addRecent;
-    window.__azProducts = PRODUCTS;
+    window.__azRecent = addRecent;
 
-    /* ------------------------------------------------------------------ */
-    /* CATÁLOGO — inicialización                                           */
-    /* ------------------------------------------------------------------ */
+    function boot() {
+        /* Si Supabase (panel de admin) ya tiene el catálogo real cargado,
+           se usa esa fuente en vez del respaldo fijo. Se valida con un id
+           conocido para no romper el sitio si todavía no se corrió
+           admin/sync_products.sql (quedarían los productos de ejemplo). */
+        var azList = (window.AZ && AZ.publicProducts) ? AZ.publicProducts() : [];
+        var looksReal = azList.some(function(x) { return x.id === 'anillo-labradorita-pirita'; });
+        if (looksReal) PRODUCTS = azList.map(mapFromAZ);
 
-    if (!document.getElementById('catalog-grid')) return; // no estamos en catálogo
+        window.__azProducts = PRODUCTS;
+
+        /* ------------------------------------------------------------------ */
+        /* CATÁLOGO — inicialización                                           */
+        /* ------------------------------------------------------------------ */
+
+        if (!document.getElementById('catalog-grid')) return; // no estamos en catálogo
 
     var grid     = document.getElementById('catalog-grid');
     var countEl  = document.getElementById('cat-count');
@@ -962,7 +1027,10 @@
         }
     };
 
-    render();
-    renderRecent();
+        render();
+        renderRecent();
+    }
+
+    if (window.AZ && AZ.onReady) AZ.onReady(boot); else boot();
 
 })();
