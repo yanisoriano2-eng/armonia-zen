@@ -42,7 +42,7 @@
             heroImage: 'imagenes/banner.jpg'
         },
         banners: {
-            catalogo: { label: 'La Colección', title: 'Tienda', text: 'Cada pieza, elegida por cómo transforma el aire de un espacio.', image: 'https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true },
+            catalogo: { label: 'La Colección', title: 'Tienda', text: 'Cada pieza, elegida por cómo transforma el aire de un espacio.', image: 'imagenes/tienda-banner.jpg', overlay: 70, active: true },
             piedras:  { label: 'Cristales · Energía · Intención', title: 'Piedras', text: 'Nacidas en el corazón de la tierra.', image: 'https://images.unsplash.com/photo-1726946998938-68df123d4c94?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true },
             plantas:  { label: 'Naturaleza · Vida · Bienestar', title: 'Plantas', text: 'Más que decoración, son presencia viva.', image: 'https://images.unsplash.com/photo-1764422097784-0eaa2340d0e1?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true },
             blog:     { label: 'Guías · Rituales · Bienestar', title: 'Journal', text: 'Lecturas para una vida más consciente.', image: 'https://images.unsplash.com/photo-1568990416308-c998af4cf9ee?w=2000&q=80&auto=format&fit=crop', overlay: 70, active: true },

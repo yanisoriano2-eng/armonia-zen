@@ -27,7 +27,7 @@
     };
 
     function imgUrl(key, size) {
-        if (key && key.indexOf('imagenes/') === 0) return key;
+        if (key && (key.indexOf('imagenes/') === 0 || key.indexOf('http') === 0)) return key;
         var id = IMG_IDS[key] || IMG_IDS.crystal;
         var q  = size === 'sm' ? QS : size === 'md' ? QM : Q;
         return BASE + id + q;

@@ -2,3 +2,4 @@ imagenes/*
 !imagenes/catalogo/
 !imagenes/catalogo/**
 !imagenes/banner.jpg
+!imagenes/tienda-banner.jpg

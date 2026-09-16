@@ -38,7 +38,8 @@
         { id: 'decoracion',   name: 'Decoración',      subs: ['Budas','Monjes','Lechuzas','Porta Sahumarios'] },
         { id: 'fuentes',      name: 'Fuentes',         subs: ['Decorativas','Cascada'] },
         { id: 'lamparas',     name: 'Lámparas de Sal', subs: ['Clásica'] },
-        { id: 'terrarios',    name: 'Terrarios',       subs: ['Mediano'] }
+        { id: 'terrarios',    name: 'Terrarios',       subs: ['Mediano'] },
+        { id: 'plantas',      name: 'Plantas',         subs: ['Interior'] }
     ];
 
     /* ------------------------------------------------------------------ */
@@ -600,6 +601,68 @@
             descLong: '<p>Cada terrario se arma a mano combinando plantas de bajo mantenimiento, sustrato y elementos decorativos dentro de un recipiente de vidrio. El resultado es un pequeño ecosistema autocontenido que aporta vida y frescura a cualquier rincón, sin pedir demasiado a cambio.</p>',
             features: [{ l: 'Incluye', v: 'Plantas ya plantadas' }, { l: 'Recipiente', v: 'Vidrio' }, { l: 'Armado', v: 'A mano' }, { l: 'Mantenimiento', v: 'Bajo' }],
             benefits: ['Vida y frescura para el espacio', 'Bajo mantenimiento', 'Pieza decorativa única', 'Ideal para regalo']
+        },
+
+        /* ---- PLANTAS ---- */
+        {
+            id: 'planta-monstera-deliciosa', name: 'Monstera Deliciosa',
+            cat: 'plantas', subcat: 'Interior', price: 28000,
+            badges: [{ cls: 'natural', label: 'Planta Viva' }],
+            img: 'https://images.unsplash.com/photo-1525498128493-380d1990a112?w=1000&q=80&auto=format&fit=crop',
+            descShort: 'La reina del interiorismo contemporáneo. Sus hojas perforadas dibujan sombras vivas y llenan un rincón vacío con elegancia tropical.',
+            descLong: '<p>La reina del interiorismo contemporáneo. Sus hojas perforadas dibujan sombras vivas en la pared y llenan un rincón vacío con una elegancia tropical inconfundible. Resistente y agradecida.</p>',
+            features: [{ l: 'Luz', v: 'Indirecta' }, { l: 'Riego', v: 'Moderado' }, { l: 'Energía', v: 'Elegancia · Presencia · Frescura' }],
+            benefits: ['Purifica el aire', 'Bajo mantenimiento', 'Presencia decorativa fuerte']
+        },
+        {
+            id: 'planta-pothos', name: 'Pothos',
+            cat: 'plantas', subcat: 'Interior', price: 16000,
+            badges: [{ cls: 'natural', label: 'Planta Viva' }],
+            img: 'https://images.unsplash.com/photo-1537039557108-4a42c334fd5e?w=1000&q=80&auto=format&fit=crop',
+            descShort: 'La más indulgente de todas. Crece colgando o trepando, tolera el descuido y purifica el aire mientras lo hace.',
+            descLong: '<p>La más indulgente de todas. Crece colgando o trepando, tolera el descuido y purifica el aire mientras lo hace. Perfecta para estantes altos donde su cascada verde puede caer libre.</p>',
+            features: [{ l: 'Luz', v: 'Baja a media' }, { l: 'Riego', v: 'Bajo' }, { l: 'Energía', v: 'Purificación · Adaptación · Generosidad' }],
+            benefits: ['Muy fácil de cuidar', 'Purifica el aire', 'Ideal para colgar']
+        },
+        {
+            id: 'planta-bambu-de-la-suerte', name: 'Bambú de la Suerte',
+            cat: 'plantas', subcat: 'Interior', price: 19000,
+            badges: [{ cls: 'natural', label: 'Planta Viva' }],
+            img: 'https://images.unsplash.com/photo-1532920161727-344adb090f7f?w=1000&q=80&auto=format&fit=crop',
+            descShort: 'Símbolo de prosperidad en el Feng Shui. Crece en agua o en tierra y aporta verticalidad, orden y buena fortuna.',
+            descLong: '<p>Símbolo de prosperidad en el Feng Shui. Crece en agua o en tierra, casi sin pedir nada, y aporta verticalidad y orden. Tradicionalmente se ubica en el este del hogar para atraer la buena fortuna.</p>',
+            features: [{ l: 'Luz', v: 'Indirecta' }, { l: 'Riego', v: 'En agua' }, { l: 'Energía', v: 'Abundancia · Protección · Flexibilidad' }],
+            benefits: ['Trae buena fortuna (Feng Shui)', 'Crece en agua, sin tierra', 'Bajo mantenimiento']
+        },
+        {
+            id: 'planta-espada-de-san-jorge', name: 'Espada de San Jorge',
+            cat: 'plantas', subcat: 'Interior', price: 24000,
+            badges: [{ cls: 'natural', label: 'Planta Viva' }],
+            img: 'https://images.unsplash.com/photo-1593482892290-f54927ae1bb6?w=1000&q=80&auto=format&fit=crop',
+            descShort: 'Indestructible y arquitectónica. Sus hojas erguidas purifican el aire incluso de noche y aguantan la sequía sin quejarse.',
+            descLong: '<p>Indestructible y arquitectónica. Sus hojas erguidas como espadas purifican el aire incluso de noche, y aguantan la sequía sin quejarse. La planta perfecta para quien cree que no sabe cuidar plantas.</p>',
+            features: [{ l: 'Luz', v: 'Cualquiera' }, { l: 'Riego', v: 'Mínimo' }, { l: 'Energía', v: 'Protección · Poder · Resiliencia' }],
+            benefits: ['Purifica el aire de noche', 'Resiste la sequía', 'Casi imposible de matar']
+        },
+        {
+            id: 'planta-filodendro-corazon', name: 'Filodendro Corazón',
+            cat: 'plantas', subcat: 'Interior', price: 17000,
+            badges: [{ cls: 'natural', label: 'Planta Viva' }],
+            img: 'https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?w=1000&q=80&auto=format&fit=crop',
+            descShort: 'Hojas en forma de corazón que se enredan con suavidad. Crecimiento generoso y carácter dócil, ideal para colgar.',
+            descLong: '<p>Hojas en forma de corazón que se enredan con suavidad por donde las dejes. De crecimiento generoso y carácter dócil, es ideal para colgar y dejar que el verde abrace una esquina del cuarto.</p>',
+            features: [{ l: 'Luz', v: 'Media' }, { l: 'Riego', v: 'Moderado' }, { l: 'Energía', v: 'Creatividad · Crecimiento · Calidez' }],
+            benefits: ['Ideal para colgar', 'Crecimiento rápido', 'Hojas decorativas en forma de corazón']
+        },
+        {
+            id: 'planta-filodendro-brasil', name: 'Filodendro Brasil',
+            cat: 'plantas', subcat: 'Interior', price: 18000,
+            badges: [{ cls: 'natural', label: 'Planta Viva' }],
+            img: 'https://images.unsplash.com/photo-1641977563529-7b617571393d?w=1000&q=80&auto=format&fit=crop',
+            descShort: 'La versión luminosa del filodendro: sus hojas combinan dos verdes que parecen pintados a mano.',
+            descLong: '<p>La versión luminosa del filodendro corazón: sus hojas combinan dos verdes que parecen pintados a mano. Trae movimiento y un toque vibrante a los rincones que piden un poco más de vida.</p>',
+            features: [{ l: 'Luz', v: 'Media' }, { l: 'Riego', v: 'Moderado' }, { l: 'Energía', v: 'Energía · Color · Movimiento' }],
+            benefits: ['Follaje bicolor llamativo', 'Fácil de cuidar', 'Ideal para colgar']
         }
     ];
 
@@ -636,7 +699,7 @@
     function money(n) { return '$ ' + Number(n).toLocaleString('es-AR'); }
 
     function buildImg(p) {
-        if (p.img && p.img.indexOf('imagenes/') === 0) return p.img;
+        if (p.img && (p.img.indexOf('imagenes/') === 0 || p.img.indexOf('http') === 0)) return p.img;
         return BASE + I[p.img || 'crystal'] + Q;
     }
 
