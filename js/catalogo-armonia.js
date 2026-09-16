@@ -792,6 +792,15 @@
                 if (p) openQuickView(p);
             });
         });
+        /* Tocar cualquier parte de la tarjeta (imagen, texto, etc.) lleva al detalle,
+           salvo que se haya tocado un botón/enlace con su propia acción. */
+        grid.querySelectorAll('.pcard').forEach(function(card) {
+            card.addEventListener('click', function(e) {
+                if (e.target.closest('button, a')) return;
+                var id = card.getAttribute('data-id');
+                if (id) { window.__azRecent(id); window.location.href = 'producto.html?id=' + id; }
+            });
+        });
     }
 
     /* Subcategorías */
