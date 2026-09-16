@@ -704,7 +704,7 @@ img { display: block; max-width: 100%; }
     max-width: 1480px;
     margin: 0 auto;
 }
-.offer-card { position: relative; display: flex; flex-direction: column; }
+.offer-card { position: relative; display: flex; flex-direction: column; cursor: pointer; }
 .offer-card__media {
     position: relative;
     overflow: hidden;
@@ -726,16 +726,37 @@ img { display: block; max-width: 100%; }
 .offer-card__price { display: flex; align-items: baseline; gap: 9px; margin-bottom: 16px; }
 .offer-card__price-orig { font-size: 0.85rem; color: var(--ivory-faint); text-decoration: line-through; }
 .offer-card__price-now { font-family: var(--serif); font-size: 1.25rem; color: var(--gold); }
+.offer-card__actions { display: flex; gap: 8px; margin-top: auto; }
+.offer-card__detail {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--gold-line);
+    color: var(--ivory); font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; text-align: center;
+    padding: 13px 8px;
+    transition: background 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+.offer-card__detail:hover { border-color: var(--gold); color: var(--gold); }
 .offer-card__add {
     display: flex; align-items: center; justify-content: center; gap: 8px;
-    width: 100%; background: rgba(255,255,255,0.06); border: 1px solid var(--gold-line);
-    color: var(--ivory); font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
-    padding: 13px; cursor: pointer; margin-top: auto;
+    flex: 1.3; background: rgba(255,255,255,0.06); border: 1px solid var(--gold-line);
+    color: var(--ivory); font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 13px 8px; cursor: pointer;
     transition: background 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
 }
 .offer-card__add:hover { background: var(--gold); color: var(--ivory); border-color: var(--gold); }
 @media (max-width: 1024px) { .offer-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .offer-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+    .offer-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .offer-card__media { aspect-ratio: 1/1; margin-bottom: 10px; }
+    .offer-card__ribbon { top: 8px; left: 8px; font-size: 0.55rem; padding: 4px 8px; }
+    .offer-card__cat { font-size: 0.56rem; margin-bottom: 3px; }
+    .offer-card__name { font-size: 0.94rem; margin-bottom: 5px; }
+    .offer-card__price { margin-bottom: 10px; }
+    .offer-card__price-now { font-size: 1.02rem; }
+    .offer-card__actions { flex-direction: column; gap: 6px; }
+    .offer-card__detail, .offer-card__add { padding: 10px 6px; font-size: 0.6rem; letter-spacing: 0.08em; }
+}
 
 /* Rituales — revista -------------------------------------------------------- */
 

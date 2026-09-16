@@ -12,6 +12,14 @@
         if (pre) setTimeout(function () { pre.classList.add('hidden'); }, 1600);
     });
 
+    /* ---------- Tarjetas de ofertas (home): tocar la tarjeta lleva al detalle ---------- */
+    document.querySelectorAll('.offer-card[data-id]').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+            if (e.target.closest('button, a')) return;
+            window.location.href = 'producto.html?id=' + card.getAttribute('data-id');
+        });
+    });
+
     /* ---------- Header: transparente -> glassmorphism ---------- */
     var header = document.getElementById('header');
     /* Páginas internas cargan el header ya "scrolled" (opaco) a propósito,
